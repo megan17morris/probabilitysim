@@ -10,9 +10,13 @@ print("The order of the goats and the car is randomized.")
 #goat list is internal, wind it down to help with selecting which door to view
 #door list is external, we pull from it the door selected and the door revealed
 #to know what door they can switch to
-goatlist= [1,2,3]
-doorlist=[1,2,3]
+goatlist = [1,2,3]
+print(goatlist)
+doorlist = [1,2,3]
+
 cardoor = random.randint(1,3)
+goatlist.remove(int(cardoor))
+
 # have an array for 1,3 where i remove the car door, then we can randomize on this array for opening door
 #2. Prompt user to pick a door- validate, must be a number 1-3 and integer
 
@@ -33,21 +37,25 @@ def pickDoor(message):
 doorchoice=pickDoor("Choose a door: ")
 doorlist.remove(doorchoice)
 if doorchoice == cardoor:
-    correctchoice=True
+    correctchoice = True
 else:
-    correctchoice=False
+    correctchoice = False
 
 #3. If goat door, open other goat door. If not goat door, open random other door
 if correctchoice==False:
     #we can't choose the door they chose for goat door
     goatlist.remove(doorchoice)
+    
     #original choice will be removed
     print("Door " + str(goatlist[0]) + " is a goat.")
+   
 else:
+    
     randomchoice=goatlist[random.randint(0,1)]
-    print ("Door " + str(randomchoice[0])+" is a goat")
+    
+    print ("Door " + str(randomchoice)+" is a goat")
     doorlist.remove(randomchoice)
-    print(str(doorlist))
+
 
 #4. Prompt to stay or switch.
 while True: 
