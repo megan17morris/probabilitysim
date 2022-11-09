@@ -11,9 +11,7 @@ print("The order of the goats and the car is randomized.")
 #door list is external, we pull from it the door selected and the door revealed
 #to know what door they can switch to
 goatlist = [1,2,3]
-print(goatlist)
 doorlist = [1,2,3]
-
 cardoor = random.randint(1,3)
 goatlist.remove(int(cardoor))
 
@@ -76,7 +74,4 @@ elif secondchoice == 2 and correctchoice == False:
     print("You win a car!")
 else:
     print("i guess you get this goat")
-    
-
 #separate function to this randomly many times, sticking with stay or switch option
-

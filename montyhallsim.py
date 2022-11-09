@@ -18,9 +18,6 @@ def montyhall(n, goats = 3):
     switchcountratio = switchcount / n
     return switchcountratio
 
-
-        
-
 while True:
     try:
         n = int(input("How many times would you like to simulate the Monty Hall Problem? "))

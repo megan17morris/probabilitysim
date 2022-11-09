@@ -1,0 +1,58 @@
+/*Styles.css */
+/*
+/* CSS HEX */
+/*--pink-lavender: #cdb4dbff;
+--orchid-pink: #ffc8ddff;
+--nadeshiko-pink: #ffafccff;
+--uranian-blue: #bde0feff;
+--baby-blue-eyes: #a2d2ffff;
+*/
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffc8ddff
+}
+h1{
+    font-size: 60px;
+    text-align: center;
+    background-color: palevioletred;
+    padding: 20px;
+    margin: 0px;
+}
+#navbar{
+    text-align: center;
+    background-color: #cdb4dbff;
+    margin: 0px;
+    padding: 0px;
+}
+#navbar ul{
+    list-style-type: none;
+    margin:0px;
+    padding: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#navbar li{
+    float: none;
+    margin: 0px;
+    padding: 0px;
+}
+#navbar li a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    display: block;
+    padding: 14px 16px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+@media only screen and (min-width: 900px){
+    #navbar li{float:left;}
+    #navbar ul{
+        
+    }
+}
+
