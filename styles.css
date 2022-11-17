@@ -7,43 +7,159 @@
 --uranian-blue: #bde0feff;
 --baby-blue-eyes: #a2d2ffff;
 */
-*{
-    box-sizing: border-box;
-}
-body{
-    background-color: #ffc8ddff
-}
-h1{
-    font-size: 60px;
-    text-align: center;
-    background-color: palevioletred;
-    padding: 20px;
-    margin: 0px;
-}
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-  }
 
-
-
-
-.row{
-    margin:0px;
-    padding: 0px;
-}
-.row.content {height: 450px}
-footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-  }
-  
-  /* On small screens, set height to 'auto' for sidenav and grid */
-  @media screen and (max-width: 767px) {
-    .sidebar {
-      height: auto;
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 1000px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: purple;
+      color: white;
       padding: 15px;
     }
-    .row.content {height:auto;} 
-  }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    @media screen and (max-width: 992px) {
+
+      .row.content {height:1700px;} 
+    }
+    .navbar-header{
+      position: relative;
+    }
+.debug{
+  border-style:dotted;
+}
+.frame{
+  padding: 40px;
+}
+.img-circle{
+  
+}
+.attributions{
+  font-size: x-small;
+  color:white;
+}
+.col-md-4{
+  display:grid;
+  justify-content: center;
+  
+}
+.problemcontainer{
+  border-right-style: outset;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  height:700px;
+}
+.grid::after {
+  content: "";
+  flex: auto;
+}
+.problemexplainer{
+  font-size: 17px;
+  
+ }
+.explanationcontain{
+  max-width: 85%;
+  
+}
+
+
+
+/* Sandbox building*/
+.multidooroutline{
+  margin:10%;
+  display: flex;
+  padding: 0px;
+  width: 900px;
+}
+.doorbox{
+  display:relative;
+  height: 400px;
+  width: 350px;
+  position: relative;
+  padding: 0px;
+  overflow: -moz-hidden-unscrollable;
+  
+}
+.debugred{
+  border: red solid;
+}
+.debuggreen{
+  border:  green dashed;
+}
+.center{
+  margin: 0;
+  position: relative;
+  top:50%;
+  left:50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+.imgbox{
+ height: 70%;
+ width: 65%;
+ position: absolute;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+}
+.doorimg {
+  flex-shrink: 0;
+  min-width: 80%;
+  min-height: 90%;
+  position: absolute;
+  top:5%;
+  bottom: 100;
+  left: 5%;
+  right: 0;
+}
+
+.fade{
+  opacity:100%;
+  transition: opacity 1s;
+}
+.fade:hover{
+  opacity: 0%;
+}
+.goatimg{
+  flex-shrink: 0;
+  min-width: 80%;
+  min-height: 90%;
+  position: absolute;
+  top: 5%;
+  bottom:0;
+  left:5%;
+  right:0;
+}
+.doornum{
+  display: block;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
+  color:black;
+
+
+}

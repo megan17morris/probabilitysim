@@ -1,52 +1,144 @@
-<!--This will be the first page-->
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <title>Probability Simulator</title>
-        <meta charset="utf-8">
-        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-</html>
-<body style="background-color: #bde0feff;">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> 
-                </button>
-                <a class="navbar-brand" href="#"> Logo</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Monty Hall</a></li>
-                    <li><a href="#">The Birthday Problem</a></li>
-                    <li><a href="#">Ordered Letters</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> About Me </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="jumbotron text-center mx-0 px-0" style="background-color: #ffc8ddff">
-        <h2> Probability Simulator</h2>
-    </div> 
-    <div class="row text-center mx-0"> 
-        <div class="col-md-4" style="background-color:#cdb4dbff"> 
-           <h2> The birthday Problem </h2>
-        </div>
-        <div class="col-md-4" style="background-color:#cdb4dbff"> 
-            <h2>Monty Hall</h2>
-        </div>
-        <div class ="col-md-4" style="background-color:#cdb4dbff"> 
-            <h2>  Third Problem</h2>
-        </div>
+<head>
+  <title>Probability Simulator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">
+        <div class=frame1 style="height:50px;">
+        <span class="helper"></span><img class="logo" src="whitedice.png" height="30" />
+        </div>
+    </a>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar" >
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="montyhall.html">Monty Hall Problem </a></li>
+        <li><a href="birthday.html">Birthday Problem</a></li>
+        <li><a href="letters.html">Scrambled Letters</a></li>
+        <li><a href="sandbox.html">sandbox</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-10 text-left"> 
+      <h1>Welcome</h1>
+      <p>
+        Whether you are trying to understand the odds of you winning poker, or trying to predict market fluctuations, understanding basic probability is absolutely essential.
+        This site was created to help you explore some fun probability problems through a simulator that will walk you step by step through the solving process.
+        The Monty Hall problem and the Birthday problem are two problems that have surprising results that often seem unintuitive to new learners of probability. 
+      </p>
+      <h5 class="text-uppercase em"> Basic Concepts in Probability</h5>
+      <p> Before you begin these simulations, let's start with the basics. The probability that an event will occur is a number between
+        0 and 1 with 0 representing the situation where the event will absolutely not occur while 1 represents the case where the event will, without 
+        a doubt occur. 
+      </p>
+      <hr>
+      <div class="container-fluid text-center ">
+        <!--Monty Hall Problem -->
+            <div class="col-md-4 container-fluid problemcontainer debug">
+              
+                <h3 class="debug"> The Monty Hall Problem</h3>
+                <a href="montyhall.html">
+                <div class="frame text-center">
+                    <img class ="img-circle images" src="goat.jpg" height="200" width="250">
+                </div>
+                </a> 
+                <div class="  container-fluid explanationcontain debug">
+                <h3 >
+                  The Problem:
+                </h3>         
+                <p class="problemexplainer">The Monty Hall Problem is a brain teaser that takes its origin
+                  in the game show Let's Make a Deal. The probability behind this problem has stumped even some 
+                  of the best mathematicians.
+
+                </p>
+                <p class="problemexplainer">
+                  Stay or Switch. Which will you choose?
+                </p>
+              </div>     
+            
+            </div>
+        <!--Birthday Problem-->
+            <div class="col-md-4 containter-fluid problemcontainer debug"> 
+              
+                <h3 class="debug">The Birthday Problem </h3>
+                <a href="birthday.html">
+                <div class="frame">
+                    <img class="img-circle images" src="cupcake.jpg" height="200" width="250">
+                </div>
+                </a>
+                <div class=" container-fluid explanationcontain debug">
+                <h3>
+                  The Problem:
+                </h3>         
+                <p class="problemexplainer"> How many people need to be in a room for it to be more likely than not 
+                  that at least two people share a birthday? The answer is surprisingly low. 
+
+                </p>
+                <p class="problemexplainer">
+                  What is your guess?
+                </p>
+              </div>  
+            </div>
+        <!--Letter Mixup Problem-->    
+            <div class="col-md-4 container-fluid problemcontainer ">
+                <h3>Letter Mixup</h3>
+                <a href="letters.html">
+                <div class="frame">
+                <img class="img-circle images" src="alphabet.jpg" height="200" width="250">
+                </div>
+                </a>
+                <div class=" container-fluid explanationcontain">
+                  <h3>
+                    The Problem:
+                  </h3>         
+                  <p class="problemexplainer"> 
+                    If I give you a word, how many ways can you reorder the letters? How does this change if the word contains the same letter multiple times?
+                  </p>
+                  <p class="problemexplainer">
+                    Can you write out all possible orderings?
+                  </p>
+                </div>  
+            </div>
+            
+        </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid ">
+  <p class="text-left">Image attributions</p>
+  <div class="attributions text-left">
+  <p>Birthday Cupcake With Candle by Oleksandr Latkun from <a class="attributions" href="NounProject.com">NounProject.com</a>
+     <br> Goat Poking A Tongue On Green Grass Field by Scopio from 
+     <a class="attributions" href="NounProject.com">NounProject.com </a></p>
+  </div>
+</footer>
+
+</body>
+</html>
