@@ -9,9 +9,11 @@
 */
 
     /* Remove the navbar's default margin-bottom and rounded borders */ 
+    
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
+      
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -26,7 +28,7 @@
     
     /* Set black background color, white text and some padding */
     footer {
-      background-color: purple;
+      background-color: lightpink;
       color: white;
       padding: 15px;
     }
@@ -51,9 +53,6 @@
 }
 .frame{
   padding: 40px;
-}
-.img-circle{
-  
 }
 .attributions{
   font-size: x-small;
@@ -90,16 +89,16 @@
 .multidooroutline{
   margin:10%;
   display: flex;
-  padding: 0px;
+  padding: 37px;
   width: 900px;
 }
 .doorbox{
-  display:relative;
+  
   height: 400px;
   width: 350px;
   position: relative;
   padding: 0px;
-  overflow: -moz-hidden-unscrollable;
+  overflow: hidden;
   
 }
 .debugred{
@@ -137,11 +136,11 @@
 
 .fade{
   opacity:100%;
-  transition: opacity 1s;
 }
 .fade:hover{
-  opacity: 0%;
+  visibility: none;
 }
+
 .goatimg{
   flex-shrink: 0;
   min-width: 80%;
@@ -161,5 +160,77 @@
   font-size: 150px;
   color:black;
 
+}
 
+.startbutton{
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline:none;
+  color: #fff;
+  background-color: #04AA6D;
+  border:none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.startbutton:hover {background-color: #3e8341;}
+
+.button:active{
+  background-color: #3e8e60;
+  box-shadow: 0 5 px #666;
+  transform: translateY(4px);
+}
+.doorbox1{
+  height: 400px;
+  width: 300px;
+  position: relative;
+  padding:20px;
+  margin: 10px;
+}
+.buttonbox{
+  position:relative;
+  height: 100px;
+  width: 100%;
+  border: 2px black solid; 
+  color: orange;
+}
+.doorcontainer{
+  margin: 8%;
+  position: absolute;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 400px 100px;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.doorbtn{
+display: none;
+}
+.sbtn{
+  display:none;
+}
+
+#instruction{
+  display: block;
+  background-color: aquamarine;
+  font-size: x-large;
+  margin-top: 90px;
 }
