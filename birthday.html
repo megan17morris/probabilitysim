@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="styles.css">
-  
+  <script src="bithday.js"></script>
 </head>
 <body>
 
@@ -29,9 +29,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="montyhall.html">Monty Hall Problem </a></li>
-        <li><a href="birthday.html">Birthday Problem</a></li>
+        <li class="active"><a href="birthday.html">Birthday Problem</a></li>
         <li><a href="letters.html">Scrambled Letters</a></li>
         <li><a href="sandbox.html">sandbox</a></li>
       </ul>
@@ -47,5 +47,97 @@
       <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-10 text-left"> 
-      <h1>Welcome</h1>
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <h1>Welcome to the Birthday Problem!</h1>
+          <h4>Problem Introduction</h4>
+          <p>The birthday problem relies on a few assumptions.
+            Assume that there are 365 days in every year (we are going to ignore leap years),
+            and assume that the probability of being born on a given day
+            is the same for all days of the year. Thus, with this assumption you have a <span class="lead"> 1&frasl;365 </span>chance of 
+            being born on July 2nd, for example.
+          </p>
+          <p>
+            Using these assumptions, the birthday problem asks
+            what is the minimum number of people that must be in a room
+            such that it is more likely than not that two people in the room share a birthday.
+          </p>
+        </div>
+
+        <div class="col-sm-4 piccontainer ">
+          <img src="cupcake2.jpg" class="cupcakeimg">
+        </div>
+      </div>
+
+      <div class="examplecase debug">
+        <h4 class="text-center">
+          The Case for Two People
+        </h4>
+        <p> If there is only 1 person in the room, the birthday problem is trivial. There is a 0% chance of two people sharing
+          a birthday since there is only 1 person. </p>
+        <p> If there are only 2 people in the room, the problem is still simple.
+          The probability that the 2 people share a birthday is <span class="lead"> 1&frasl;365 </span>
+          as the second person in the room has a 1 out of 365 chance of being
+          born on the same day as the first person.
+        </p>
+        <div class="math-container">
+          <h3>2 People</h3>
+          <p>
+            P(The 2 people share a birthday)  = <span class="lead"> 1 &#215  1&frasl;365 </span> = <span class="lead"> 1&frasl;365 </span>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="container" id ="tester" style="background-color: lavender">
+      </div>
+      <div class="container" id="testing" style="background-color: lightgrey">Woah</div>
     </div>
+  </div>
+
+    
+</div>
+</div>
+</body>
+<script>
+
+
+
+function birthdayprob(num){
+  p1=1;
+  if (num > 365){
+      p1 = 0;
+  }
+  else{
+      for (let i = 0; i < num ; i++){
+      p1 = p1 * ((365-i)/365);
+      }
+  }
+  pf = 1 - p1; 
+  return pf;
+}
+function birthdaytext(num){
+  btext="1 - (";
+  v=365;
+  btext = btext + v.toString() + "&frasl;365";
+  for (let i = 1; i < Math.min(num,4); i++){
+    v= 365-i;
+    btext= btext + " * " +v.toString() +"&frasl;365";
+  }
+  if (num > 4){
+    v=365-(num-1);
+    btext=btext + " * " + "..." +v.toString() +"&frasl;365";
+  }
+  //if (num > 4){
+    //v = 365 -(num-1);
+    //btext =btext + "* ..." + v.toString() + "&frasl;365";
+  //}  
+  
+  btext = btext  +")";
+  return btext;
+}
+
+document.getElementById("tester").innerHTML=birthdayprob(152).toFixed(30)*100 + "%";
+document.getElementById("testing").innerHTML=birthdaytext(8);
+</script>
