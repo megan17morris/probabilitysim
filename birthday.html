@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="styles.css">
   <script src="bithday.js"></script>
 </head>
@@ -49,7 +51,7 @@
     <div class="col-sm-10 text-left"> 
       <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8 probintro">
           <h1>Welcome to the Birthday Problem!</h1>
           <h4>Problem Introduction</h4>
           <p>The birthday problem relies on a few assumptions.
@@ -69,6 +71,8 @@
           <img src="cupcake2.jpg" class="cupcakeimg">
         </div>
       </div>
+      <div class="row case1row debugred">
+      <div class="col-sm-6">
 
       <div class="examplecase debug">
         <h4 class="text-center">
@@ -84,12 +88,69 @@
         <div class="math-container">
           <h3>2 People</h3>
           <p>
-            P(The 2 people share a birthday)  = <span class="lead"> 1 &#215  1&frasl;365 </span> = <span class="lead"> 1&frasl;365 </span>
+            P(The 2 people share a birthday)  = $$ 1 * \frac{1}{365} = \frac{1}{365} $$
           </p>
 
         </div>
       </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="examplecase ">
+        <h4 class="text-center">
+          The Case for Three People
+        </h4>
+        <p> Imagine Ashley, Bob, and Charlie enter the room in that order. </p>
+        <p> How do we figure out the probability that at least two of them share a birthday? 
+        </p>
+        <p> We can first add the probability that each pair of people share a birthday.</p>
+        <p>
+          But wait! if we do that, then we also have to account for the fact that adding in this
+           way means that we added the probability of all 3 sharing a birthday three times,
+            so we must subtract out that probability.
+        </p>
+        <p> Rather complicated right? Let's move to the generalized solution to see how we can make this problem easier.</p>
+        <div class="math-container text-center">
+          <h3>3 People</h3>
+          <p>
+            P(At least 2 out of 3 share a birthday)  = 
+          </p>
+          <p>P(A & B) + P(B & C) + P(A & C) - 2 &#215 P(A & B & C) =</p>
+          <p>$$\frac{1}{365} + \frac{1}{365} + \frac{1}{365} - 2((\frac{1}{365})^{2})$$</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <div class="examplecase ">
+        <h4 class="text-center">
+          The Generalized Case
+        </h4>
+        <p> As you can see with the case of three people, this problem becomes rather difficult quickly if 
+          we don't find a simpler way to approach it. </p>
+        <p>Instead of trying to find the probabilities of any given two people sharing a birthday, we can use
+          a trick of probability to simplify. Instead, consider the probability that no two people in the room share a birthday.
+        </p>
+        <p>
+          What does this mean? If no two people share a birthday, that means that everyone in the room has a distinct birthday.
+          While this is the opposite of what we are trying to find, we can use the fact that 1 minus the probability
+          of an event not happening is equal to the event happening. Look below to see how this applies to the case of N people.
+        </p>
+        <div class="math-container">
+          <h3>N people</h3>
+          <p>
+            1 - P(No one shares a birthday) = <span class=""> $$ 1 - (1 * \frac{364}{365}  * ... 
+              \frac{365 - (n-1)}{365} )
+              $$</span> 
+          </p>
 
+        </div>
+      </div>
+    </div>
+
+    </div>
+    
+  </div>
       <div class="container" id ="tester" style="background-color: lavender">
       </div>
       <div class="container" id="testing" style="background-color: lightgrey">Woah</div>

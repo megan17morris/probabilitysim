@@ -1,0 +1,9 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+
+\begin{document}
+$$
+\frac{365 - (n-1)}{365} 
+$$
+\end{document}

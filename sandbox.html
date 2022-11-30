@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
   <link rel="stylesheet" href="styles.css">
   
 </head>
@@ -119,16 +120,56 @@
 
 
 
-<h1>The grid-template-rows Property</h1>
-<div class="container debugred">
-<div class="grid-container">
-  <div class="doorbox2">1</div>
-  <div class="doorbox2">2</div>
-  <div class="doorbox2">3</div>  
-  <div class="buttonbox">4</div>
-  <div class="buttonbox">5</div>
-  <div class="buttonbox" id="monkey">6</div>  
+<h1>Build for Birthday</h1>
+<div class="container debugred birthdayp debug">
+  <div class="row1 birthdayrow ">
+    <div class="col-xs-6 birthdaybox ">
+        <div class="personbox">
+          <img class="bdayboy" src="bdayboy.png" alt="birthdyaboy">
+        </div>
+    </div>
+    <div class="col-xs-6 birthdaybox">
+      <div class="personbox">
+        <img class="bdayboy" src="bdayboy.png" alt="birthdyaboy">
+      </div>
+    </div>
+  </div>
+  <div class="row1 birthdayrow debugred">
+    <div class="col-xs-6 birthdaybox debug">
+      <div class="personbox">
+        <img class="bdayboy" src="bdayboy.png" alt="birthdyaboy">
+      </div>
+    </div>
+    <div class="col-xs-6 birthdaybox">
+      <div class="personbox">
+        <img class="bdayboy" src="bdayboy.png" alt="birthdyaboy">
+      </div>
+    </div>
+ 
+  </div>
 </div>
+
+<div id="image-map1">
+  <img src="venn.png" height="500px" width="500px">
+  <div class="pin pin-down" data-xpos="248" data-ypos="140">  
+    <h2> This is for A</h2>
+  </div>
+</div>
+
+<div class="mapbuild debugred container text-center" > 
+  <img usemap="#image-map" src="venn.png" height="500px" width="500px">
+  <div class="pin pin-down" data-xpos="248" data-ypos="140">  
+    <h2> This is for A</h2>
+  </div>
+  <map name="image-map">
+      <area shape="rect"  id="a" coords= "235,125,260,155" href="https://www.wikipedia.org">
+      <area shape="rect" id="ab" coords="300,230,325,260" href="https://www.wikipedia.org">
+      <area shape="rect" id="ac" coords="175,240, 200,260"  href="https://www.wikipedia.org">
+      <area shape="rect" id="abc" coords="240,230,265,250"  href="https://www.wikipedia.org">
+      <area shape="rect" id="bc" coords="240,350, 270, 380"  href="https://www.wikipedia.org">
+      <area shape="rect" id="c" coords="85,355,120,385"  href="https://www.wikipedia.org">
+      <area shape="rect" id="b" coords="365,370,395,395"  href="https://www.wikipedia.org">
+   </map>
 </div>
 
 
@@ -338,4 +379,39 @@ milliseconds);
 
 
       
+</script>
+
+<script>
+  $(document).ready(function(){
+ 
+ // set the image-map width and height to match the img size
+ $('#image-map').css({'width':$('#image-map img').width(),
+                   'height':$('#image-map img').height()
+ })
+ 
+ //tooltip direction
+ var tooltipDirection;
+              
+ for (i=0; i<$(".pin").length; i++)
+ {               
+     // set tooltip direction type - up or down             
+     if ($(".pin").eq(i).hasClass('pin-down')) {
+         tooltipDirection = 'tooltip-down';
+     } else {
+         tooltipDirection = 'tooltip-up';
+         }
+ 
+     // append the tooltip
+     $("#image-map").append("<div style='left:"+$(".pin").eq(i).data('xpos')+"px;top:"+$(".pin").eq(i).data('ypos')+"px' class='" + tooltipDirection +"'>\
+                                         <div class='tooltip'>" + $(".pin").eq(i).html() + "</div>\
+                                 </div>");
+ }    
+ 
+ // show/hide the tooltip
+ $('.tooltip-up, .tooltip-down').mouseenter(function(){
+             $(this).children('.tooltip').fadeIn(100);
+         }).mouseleave(function(){
+             $(this).children('.tooltip').fadeOut(100);
+         })
+});
 </script>
