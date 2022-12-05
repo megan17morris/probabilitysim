@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
   
 </head>
 <body>
@@ -24,17 +24,17 @@
       </button>
       <a class="navbar-brand" href="index.html">
         <div class=frame1 style="height:50px;">
-        <span class="helper"></span><img class="logo" src="pic/whitedice.png" height="30" />
+        <span class="helper"></span><img class="logo" src="../pic/whitedice.png" height="30" />
         </div>
     </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="html/montyhall.html">Monty Hall Problem </a></li>
-        <li><a href="html/birthday.html">Birthday Problem</a></li>
-        <li><a href="html/letters.html">Scrambled Letters</a></li>
-        <li><a href="html/sandbox.html">sandbox</a></li>
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li><a href="montyhall.html">Monty Hall Problem </a></li>
+        <li><a href="birthday.html">Birthday Problem</a></li>
+        <li><a href="letters.html">Scrambled Letters</a></li>
+        <li><a href="sandbox.html">sandbox</a></li>
       </ul>
     </div>
   </div>
@@ -45,25 +45,25 @@
 <div class=" row debugred multidooroutline container-fluid">
   
     <div class="col-md-4 doorbox debug">
-        <img class = "goatimg" src="pic/goat.png" id="d1" style="width:90%">
+        <img class = "goatimg" src="../pic/goat.png" id="d1" style="width:90%">
         <div class="fade" id="door1">
-        <img class = "doorimg " id="doorimg1" src="pic/cardoor.png" style="width:90%">
+        <img class = "doorimg " id="doorimg1" src="../pic/cardoor.png" style="width:90%">
         <div class="doornum ">1</div>
         </div>
     </div> 
     <div class="col-md-4 doorbox debug">
         
-        <img class = "goatimg" src="pic/goat.png" id ="d2" style="width:90%">
+        <img class = "goatimg" src="../pic/goat.png" id ="d2" style="width:90%">
         <div class="fade" id="door2">
-        <img class = "doorimg" id="doorimg2" src="pic/cardoor.png" style="width:90%">
+        <img class = "doorimg" id="doorimg2" src="../pic/cardoor.png" style="width:90%">
         <div class="doornum ">2</div>
         </div>
     </div> 
     <div class="col-md-4 doorbox debug">
-        <img class = "goatimg" src="pic/goat.png" id="d3" style="width:90%">
+        <img class = "goatimg" src="../pic/goat.png" id="d3" style="width:90%">
         <div class="fade" id="door3">
 
-        <img class = "doorimg" id="doorimg3" src="pic/cardoor.png" style="width:90%">
+        <img class = "doorimg" id="doorimg3" src="../pic/cardoor.png" style="width:90%">
         <div class="doornum ">3</div>
         </div>
     </div>
@@ -125,24 +125,24 @@
   <div class="row1 birthdayrow ">
     <div class="col-xs-6 birthdaybox ">
         <div class="personbox">
-          <img class="bdayboy" src="pic/bdayboy.png" alt="birthdyaboy">
+          <img class="bdayboy" src="../pic/bdayboy.png" alt="birthdyaboy">
         </div>
     </div>
     <div class="col-xs-6 birthdaybox">
       <div class="personbox">
-        <img class="bdayboy" src="pic/bdayboy.png" alt="birthdyaboy">
+        <img class="bdayboy" src="../pic/bdayboy.png" alt="birthdyaboy">
       </div>
     </div>
   </div>
   <div class="row1 birthdayrow debugred">
     <div class="col-xs-6 birthdaybox debug">
       <div class="personbox">
-        <img class="bdayboy" src="pic/bdayboy.png" alt="birthdyaboy">
+        <img class="bdayboy" src="../pic/bdayboy.png" alt="birthdyaboy">
       </div>
     </div>
     <div class="col-xs-6 birthdaybox">
       <div class="personbox">
-        <img class="bdayboy" src="pic/bdayboy.png" alt="birthdyaboy">
+        <img class="bdayboy" src="../pic/bdayboy.png" alt="birthdyaboy">
       </div>
     </div>
  
@@ -150,14 +150,14 @@
 </div>
 
 <div id="image-map1">
-  <img src="pic/venn.png" height="500px" width="500px">
+  <img src="../pic/venn.png" height="500px" width="500px">
   <div class="pin pin-down" data-xpos="248" data-ypos="140">  
     <h2> This is for A</h2>
   </div>
 </div>
 
 <div class="mapbuild debugred container text-center" > 
-  <img usemap="#image-map" src="pic/venn.png" height="500px" width="500px">
+  <img usemap="#image-map" src="../pic/venn.png" height="500px" width="500px">
   <div class="pin pin-down" data-xpos="248" data-ypos="140">  
     <h2> This is for A</h2>
   </div>
@@ -196,21 +196,21 @@
     await delay(1000);
 
     if (cardoor == 1){
-            document.getElementById("d1").src="pic/car.png";
+            document.getElementById("d1").src="../pic/car.png";
         }
         else if (cardoor==2){
-            document.getElementById("d2").src="pic/car.png";
+            document.getElementById("d2").src="../pic/car.png";
         }
         else{
-            document.getElementById("d3").src="pic/car.png";
+            document.getElementById("d3").src="../pic/car.png";
         }
 
 }
 
     function choosecardoor(cardoor){
-        document.getElementById("d1").src="pic/goat.png";
-        document.getElementById("d2").src="pic/goat.png";
-        document.getElementById("d3").src="pic/goat.png";
+        document.getElementById("d1").src="../pic/goat.png";
+        document.getElementById("d2").src="../pic/goat.png";
+        document.getElementById("d3").src="../pic/goat.png";
         var newtimeout =setTimeout(placecardoor(cardoor), 1000);
     }
     let goatlist = [];
@@ -220,9 +220,9 @@
       );
     const sbtnlist = Array.from (document.getElementsByClassName("sbtn"));
     function montyhall(){
-      document.getElementById("doorimg1").src = "pic/cardoor.png";
-      document.getElementById("doorimg2").src = "pic/cardoor.png";
-      document.getElementById("doorimg3").src = "pic/cardoor.png";
+      document.getElementById("doorimg1").src = "../pic/cardoor.png";
+      document.getElementById("doorimg2").src = "../pic/cardoor.png";
+      document.getElementById("doorimg3").src = "../pic/cardoor.png";
       document.getElementById("door1").style.opacity = "100%";
       document.getElementById("door2").style.opacity = "100%";
       document.getElementById("door3").style.opacity = "100%";
@@ -249,13 +249,13 @@
       document.getElementById("testelement").innerHTML= "The door choice is " + x.value;
       dchoice=x.value;
       if (dchoice == 1){
-        document.getElementById("doorimg1").src = "pic/cardoorchosen.png";
+        document.getElementById("doorimg1").src = "../pic/cardoorchosen.png";
       }
       else if (dchoice == 2){
-        document.getElementById("doorimg2").src = "pic/cardoorchosen.png";
+        document.getElementById("doorimg2").src = "../pic/cardoorchosen.png";
       }
       else{
-        document.getElementById("doorimg3").src = "pic/cardoorchosen.png";
+        document.getElementById("doorimg3").src = "../pic/cardoorchosen.png";
       }
       doorlist.splice(dchoice-1,1)
       doorbtnlist.forEach(button => {

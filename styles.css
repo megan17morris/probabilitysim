@@ -256,13 +256,21 @@ h6{
   margin: 0px;
 }
 .examplecase{
-  margin-top: 10px;
-  padding: 2%;
+  margin-top: 2%;
+  padding:2px;
+  margin-bottom:2%;
+  padding:0;
   background-color: lightgray;
+  height: 96%;
   
 }
+.excase{
+  padding: 10px;
+}
 .case1row{
-  height:450px;
+  height:auto;
+  display: flex;
+  align-items: stretch;
 }
 .mapbuild{
   max-width: 100%;
