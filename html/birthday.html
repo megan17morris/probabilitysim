@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="../styles.css">
   <script src="bithday.js"></script>
 </head>
@@ -31,7 +31,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="montyhall.html">Monty Hall Problem </a></li>
         <li class="active"><a href="birthday.html">Birthday Problem</a></li>
         <li><a href="letters.html">Scrambled Letters</a></li>
@@ -41,14 +41,14 @@
   </div>
 </nav>
   
-<div class="container-fluid text-center">    
+<div class="container-fluid text-center debug">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
+    <div class="d-flex align-items-stretch col-sm-2 col-lg-5 bd-sidebar debugred" >
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
     </div>
-    <div class="col-sm-10 text-left"> 
+    <div class="col-sm-10 col-lg-7 text-left"> 
       <div class="container-fluid">
       <div class="row">
         <div class="col-sm-8 probintro">
@@ -71,14 +71,13 @@
           <img src="../pic/cupcake2.jpg" class="cupcakeimg">
         </div>
       </div>
-      <div class="row case1row ">
+      <div class="row case1row debugred">
       <div class="col-sm-6">
 
       <div class="examplecase debug">
         <h4 class="text-center">
           The Case for Two People
         </h4>
-      <div case="excase debugred">
         <p> If there is only 1 person in the room, the birthday problem is trivial. There is a 0% chance of two people sharing
           a birthday since there is only 1 person. </p>
         <p> If there are only 2 people in the room, the problem is still simple.
@@ -86,7 +85,6 @@
           as the second person in the room has a 1 out of 365 chance of being
           born on the same day as the first person.
         </p>
-    </div>
         <div class="math-container">
           <h3>2 People</h3>
           <p>
@@ -96,12 +94,11 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 debug">
       <div class="examplecase debug">
         <h4 class="text-center">
           The Case for Three People
         </h4>
-      <div class="excase debug">
         <p> Imagine Ashley, Bob, and Charlie enter the room in that order. </p>
         <p> How do we figure out the probability that at least two of them share a birthday? 
         </p>
@@ -112,7 +109,6 @@
             so we must subtract out that probability.
         </p>
         <p> Rather complicated right? Let's move to the generalized solution to see how we can make this problem easier.</p>
-      </div> 
         <div class="math-container text-center">
           <h3>3 People</h3>
           <p>
@@ -126,7 +122,7 @@
   </div>
   <div class="row ">
     <div class="col-sm-12">
-      <div class="examplecase ">
+      <div class="examplecase debug">
         <h4 class="text-center">
           The Generalized Case
         </h4>

@@ -9,24 +9,30 @@
 */
 
     /* Remove the navbar's default margin-bottom and rounded borders */ 
-    
+    *{
+      box-sizing: border-box;
+    }
+    html, body{
+      height: 100%;
+    }
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
-      
     }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 1000px}
-    
-    /* Set gray background color and 100% height */
+    .pagewrapper{
+      min-height: 100%;
+      position:relative;
+    }
     .sidenav {
       padding-top: 20px;
       background-color: #f1f1f1;
       height: 100%;
+      display: flex;
+      flex-direction: column;
     }
-    
-    /* Set black background color, white text and some padding */
+    .flex-fill{
+      flex:1 1 auto;
+    }
     footer {
       background-color: lightpink;
       color: white;
@@ -48,65 +54,22 @@
     .navbar-header{
       position: relative;
     }
-.debug{
-  border-style:dotted;
-}
+
+
+/* Welcome page specific*/
 .frame{
+  /*For photos on homepage */
   padding: 40px;
 }
 .attributions{
   font-size: x-small;
   color:white;
 }
-.col-md-4{
-  display:grid;
-  justify-content: center;
-  
-}
-.problemcontainer{
-  border-right-style: outset;
-  border-top: none;
-  border-left: none;
-  border-bottom: none;
-  height:700px;
-}
 .grid::after {
   content: "";
   flex: auto;
 }
-.problemexplainer{
-  font-size: 17px;
-  
- }
-.explanationcontain{
-  max-width: 85%;
-  
-}
-
-
-
-/* Sandbox building*/
-.multidooroutline{
-  margin:10%;
-  display: flex;
-  padding: 37px;
-  width: 900px;
-}
-.doorbox{
-  
-  height: 400px;
-  width: 350px;
-  position: relative;
-  padding: 0px;
-  overflow: hidden;
-  
-}
-.debugred{
-  border: red solid;
-}
-.debuggreen{
-  border:  green dashed;
-}
+/* A class to allow us to center items */
 .center{
   margin: 0;
   position: relative;
@@ -114,6 +77,95 @@
   left:50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%)
+}
+/*Birthday Problem Specific*/
+
+.problemexplainer{
+  font-size: 17px;
+ }
+.explanationcontain{
+  max-width: 85%;  
+}
+.cupcakeimg{
+  max-width:100%;
+  max-height:100%;
+  border-radius: 50%;
+}
+.piccontainer{
+  padding:0px;
+  height: auto; 
+  margin-top: 10px;
+}
+
+.probintro{
+  padding: 30px;
+  margin: 0px;
+}
+.examplecase{
+  margin-top: 2%;
+  padding:100px;
+  margin-bottom:2%;
+  padding:0;
+  background-color: #dddddd;
+  height: 96%; 
+}
+.head1{
+  padding-top: 20px;
+  font-weight: bolder;
+}
+.excase{
+  padding: 10px;
+  padding-bottom: 0px;
+}
+.case1row{
+  height:auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.math-container{
+  background-color: lavenderblush;
+  width: 85%;
+  position: relative;
+  margin:auto;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+
+}
+.slidecontainer{
+  width:100%;
+}
+
+.slider:hover{
+  opacity:1;
+}
+
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+
+/* Sandbox building, Especially Goat Problem*/
+.multidooroutline{
+  margin:10%;
+  display: flex;
+  padding: 37px;
+  width: 900px;
+}
+.doorbox{
+  height: 400px;
+  width: 350px;
+  position: relative;
+  padding: 0px;
+  overflow: hidden;
 }
 .imgbox{
  height: 70%;
@@ -159,7 +211,6 @@
   transform: translate(-50%, -50%);
   font-size: 150px;
   color:black;
-
 }
 
 .startbutton{
@@ -167,7 +218,6 @@
   left: 50%;
   transform: translateX(-50%);
   margin-top: 15px;
-
   padding: 15px 25px;
   font-size: 24px;
   text-align: center;
@@ -205,22 +255,6 @@
   position: absolute;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 400px 100px;
-  gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-
 .doorbtn{
 display: none;
 }
@@ -234,131 +268,8 @@ display: none;
   font-size: x-large;
   margin-top: 90px;
 }
-.testing{
-  font-size: 40px;
-  border: 3px black;
-}
-h6{
-  background-color: purple;
-}
-.cupcakeimg{
-  max-width:100%;
-  max-height:100%;
-  border-radius: 50%;
-}
-.piccontainer{
-  padding:0px;
-  height: auto; 
-  margin-top: 10px;
-}
-.probintro{
-  padding: 30px;
-  margin: 0px;
-}
-.examplecase{
-  margin-top: 2%;
-  padding:2px;
-  margin-bottom:2%;
-  padding:0;
-  background-color: lightgray;
-  height: 96%;
-  
-}
-.excase{
-  padding: 10px;
-}
-.case1row{
-  height:auto;
-  display: flex;
-  align-items: stretch;
-}
-.mapbuild{
-  max-width: 100%;
-}
 
-.math-container{
-  background-color: lavenderblush;
-  width: 85%;
-  position: relative;
-  margin:auto;
-  text-align: center;
-}
 
-/** Tooltips within the Map*/
-
-#image-map1 {
-  position: relative;
-  margin: 150px auto 20px auto;
-}
-
-/* Hide the original tooltips contents */
-.pin {
-  display: none;
-}
-
-/* Begin styling the tooltips and pins */
-.tooltip-up, .tooltip-down {
-  position: absolute;
-  background: goat-jpg;
-  width: 25px;
-  height: 37px;
-}
-
-.tooltip-down {
-  background-position: 0 -37px;
-}
-
-.tooltip {
-  display: none;
-  width: 200px;
-  cursor: help;
-  text-shadow: 0 1px 0 #fff;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  z-index: 999;
-  margin-left: -115px;
-  padding:15px;
-  color: #222;
-  border-radius: 5px;
-  box-shadow: 0 3px 0 rgba(0,0,0,.7);
-  background: #fff1d3;
-  background: linear-gradient(top, #fff1d3, #ffdb90);         
-}
-
-.tooltip::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  margin-left: -10px;
-  border-bottom: 10px solid #fff1d3;
-  border-left: 10px solid transparent;
-  border-right : 10px solid transparent;
-}
-
-.tooltip-down .tooltip {
-  bottom: 12px;
-  top: auto;
-}
-
-.tooltip-down .tooltip::after {
-  bottom: -10px;
-  top: auto;
-  border-bottom: 0;
-  border-top: 10px solid #ffdb90;
-}
-
-.tooltip h2 {
-  font: bold 1.3em 'Trebuchet MS', Tahoma, Arial;
-  margin: 0 0 10px;
-}
-
-.tooltip ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
 .birthdayp{
   width: 25%;
@@ -387,4 +298,44 @@ h6{
 .bdayboy{
   position:relative;
   max-height: 100%;
+}
+
+
+/*Debugging Options
+*/
+.debug{
+  border-style:dotted;
+}
+.debugred{
+  border: red solid;
+}
+.debuggreen{
+  border:  green dashed;
+}
+
+/*Monty Hall Testing*/
+html, body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 80px;
+  width: 100%;
+  background-color: #aaa;
+}
+.content-area {
+  height: 310px;
+  background-color: #bbb;
+}
+.left-sidebar {
+  float: left;
+  width: 50px;
+  height: 100%;
+  background-color: #abcdef;
+}
+
+footer {
+  min-height: 50px;
+  width: 100%;
+  background-color: #ddd;
 }
