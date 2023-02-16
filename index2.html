@@ -39,10 +39,8 @@
     </div>
     </div>
   </nav>
-  <!--Side Bar.
-  I want the sidebar to be collapsable with only a person icon. When clicked a 
-  page will come out that will tell about me. -->
-  
+  <!--Side Bar. -->
+  <div id="allcontent">
   <div id="mySidebar" class="sidebar">
     <h3 class="sidecontent">Megan Morris</h3>
     <img id="authorpic" src="pic/Headshot1.jpg" alt="A picture of Megan" width = "150" height="auto">
@@ -68,12 +66,119 @@
 </div> 
   
   <div id="main" class="main ">
-    <button id ="openbtn1" class="openbtn"  value = "0" onclick="OCNav()"><i class="fa-solid fa-user"></i> &nbsp About Me</button>  
+    <button id ="openbtn1" class="openbtn "  value = "0" onclick="OCNav()"><i class="fa-solid fa-user"></i> &nbsp About Me</button>  
     <div class="content">
-    <h2>Collapsed Sidebar</h2>
-    <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+      <h1>Welcome</h1>
+      <p>
+        Whether you are trying to understand the odds of you winning poker, or trying to predict market fluctuations, understanding basic probability is absolutely essential.
+        This site was created to help you explore some fun probability problems through a simulator that will walk you step by step through the solving process.
+        The Monty Hall problem and the Birthday problem are two problems that have surprising results that often seem unintuitive to new learners of probability. 
+      </p>
+      <h5 class="text-uppercase em"> Basic Concepts in Probability</h5>
+      <p> Before you begin these simulations, let's start with the basics. The probability that an event will occur is a number between
+        0 and 1 with 0 representing the situation where the event will absolutely not occur while 1 represents the case where the event will, without 
+        a doubt occur. 
+      </p>
+      <hr>
+      <div class="container-fluid text-center ">
+        <!--Monty Hall Problem -->
+      <div class="row problemrow">
+            <div class="container-fluid problemcontainer  ">
+              
+                <h3 class="problemheading"> The Monty Hall Problem</h3>
+                <a href="html/montyhall2.html">
+                <div class="frame text-center ">
+                    <img class ="img-circle images" src="pic/goat.jpg" height="200" width="250">
+                </div>
+                </a> 
+                <div class="  container-fluid  explanationcontain">
+                <h3 >
+                  The Problem:
+                </h3>         
+                <p class="problemexplainer">The Monty Hall Problem is a brain teaser that takes its origin
+                  in the game show Let's Make a Deal. The probability behind this problem has stumped even some 
+                  of the best mathematicians.
+
+                </p>
+                <p class="problemexplainer">
+                  Stay or Switch. Which will you choose?
+                </p>
+              </div>     
+            
+            </div>
+        <!--Birthday Problem-->
+            <div class="containter-fluid problemcontainer "> 
+              
+                <h3 class="problemheading">The Birthday Problem </h3>
+                <a href="html/birthday2.html">
+                <div class="frame">
+                    <img class="img-circle images" src="pic/cupcake.jpg" height="200" width="250">
+                </div>
+                </a>
+                <div class=" container-fluid explanationcontain ">
+                <h3>
+                  The Problem:
+                </h3>         
+                <p class="problemexplainer"> How many people need to be in a room for it to be more likely than not 
+                  that at least two people share a birthday? The answer is surprisingly low. 
+
+                </p>
+                <p class="problemexplainer">
+                  What's your guess?
+                </p>
+              </div>  
+            </div>
+        <!--Letter Mixup Problem-->    
+            <div class="container-fluid problemcontainer ">
+                <h3 class="problemheading">Letter Mixup</h3>
+                <a href="html/letters2.html">
+                <div class="frame">
+                <img class="img-circle images" src="pic/alphabet.jpg" height="200" width="250">
+                </div>
+                </a>
+                <div class=" container-fluid explanationcontain">
+                  <h3>
+                    The Problem:
+                  </h3>         
+                  <p class=""> 
+                    If I give you a word, how many ways can you reorder the letters? How does this change if the word contains the same letter multiple times?
+                  </p>
+                  <p class="">
+                    Can you write out all possible orderings?
+                  </p>
+                </div>  
+            </div>
+            
+        </div>
+        
+    </div>
   </div>
+</div>
+</div>
   </div>
+  
+  </div>
+</div>
+<footer class=" footertext">
+  <div class="container-fluid ms-4">
+  <div class="text-center " style="font-size: 15px;">
+    Image Attributions:
+  </div>
+  <div>
+    Birthday Cupcake With Candle by Oleksandr Latkun from <a class="attributions" href="NounProject.com">NounProject.com</a>
+       <br> Goat Poking A Tongue On Green Grass Field by Scopio from 
+       <a class="attributions" href="NounProject.com">NounProject.com </a>
+  </div>
+</div>
+</footer>
+<!--<footer class="container-fluid ">
+    <p class="text-left">Image attributions</p>
+    <div class="attributions text-left">
+    <p>Birthday Cupcake With Candle by Oleksandr Latkun from <a class="attributions" href="NounProject.com">NounProject.com</a>
+       <br> Goat Poking A Tongue On Green Grass Field by Scopio from 
+       <a class="attributions" href="NounProject.com">NounProject.com </a></p>
+    </div>
+  </footer>-->
    
   
   <script>

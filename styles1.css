@@ -44,12 +44,17 @@ Also want them to be highlighted on hover.*/
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
+    top: 2;
+    left: 1;
+    background-color: black;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+}
+#allcontent{
+    position:relative;
+   
+
 }
 
 
@@ -116,3 +121,4 @@ change on hover? */
 .nav-item .active{
     background-color: grey;
 }
+
