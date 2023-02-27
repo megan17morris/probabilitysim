@@ -38,7 +38,9 @@ Also want them to be highlighted on hover.*/
     margin-left: 0;
 
 }
-
+.problemcontainer{
+    width: 30%;
+}
 .sidebar{
     height: 100%;
     width: 0;
@@ -92,13 +94,17 @@ Also want them to be highlighted on hover.*/
     color: white;
     padding: 10px 15px;
     border: none;
+    display:inline-block;
+}
+h2{
+    font-size: 50px;
 }
 #main{
     transition: margin-left .5s;
     padding: 0;
 }
 .content{
-    padding: 16px;
+    padding: 0 20px;
 }
 /* When height is less than 450ps, change the style of sidenav */
 
@@ -122,3 +128,157 @@ change on hover? */
     background-color: grey;
 }
 
+
+/* Monty hall*/
+.main{
+    position: relative;
+}
+#problemintro{
+    font-size: x-large;
+    font-weight: bold;
+    background-color:black;
+    color: white;
+    opacity: 90%;
+    border-radius: 2px ;
+}
+strong{
+    background-color: black;
+    color:white;
+    border-radius: 12px;
+    padding: 10px;
+}
+#problemwalkthrough{
+    width: 90%;
+    margin: 0px auto;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+#stepsexplainer{
+    padding: 0 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.multidooroutline{
+    display: block;
+    position: relative;
+    height: 450px;
+    width:90%;
+    margin: 0px auto;
+    padding-top: 15px;
+    align-content: center;
+    border: 2px solid black;
+    border-top:none;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0;
+   
+}
+
+.doorcontain{
+    position: relative;
+    margin: 0px auto;
+}
+.doorline{
+    height: 350px;
+    margin: 0px auto;
+    padding: 0px;
+    position: relative;
+    
+}
+.imgoutline{
+    
+    height: 95%;
+    width: 90%;
+    border: 2px black solid;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+#startbuttonrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#stayswitchrow{
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cardoor{
+    height: 100%;
+    width: 100%;
+}
+.doornum{
+    display: block;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    color:black;
+  }
+  .goatimg{
+    
+  }
+  .dooroverlay{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 100%;
+    transition: .5s ease;
+  }
+  .dooroverlay:hover{
+    opacity: 0;
+}
+
+.button-row{
+    width: 100%;
+    margin: auto;
+    
+
+}
+.buttonsrow{
+    height: 75px;
+    padding:0;
+    margin: auto;
+}
+
+#switchbtn{
+    margin-top: 5px;
+    margin-right: 20px;
+}
+#staybtn{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+#selectrow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    
+}
+
+#restartrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.buttons{
+    height: 80%;
+    min-width: 20%;
+    font-size:x-large;
+}
