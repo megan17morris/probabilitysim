@@ -78,7 +78,7 @@
       <p id="problemintro">
       Hello! Welcome to the Monty Hall Problem! 
     </p>
-    <p id="stepsexplainer">Behind two of these doors there are goats. Behind one of the doors, there is a car.
+    <p id="instruction">Behind two of these doors there are goats. Behind one of the doors, there is a car.
       During this demonstration, you will be able to first select one of the three doors. Once you have chosen,
       one of the doors that you did not choose will be lifted. You must choose to either stay with your original choice 
       or switch to the door that you did not pick. 
@@ -92,18 +92,18 @@
         <div class="row container-fluid doorcontain ">
           <div class="doorline  col-4">
            <div class="imgoutline center ">
-            <img class="goatimg center" src="../pic/goat.png"  width="100%" height="auto">
-            <div class="dooroverlay ">
+            <img class="goatimg center" src="../pic/goat.png" id="d1"  width="100%" height="auto">
+            <div class="dooroverlay" id="door1">
             <img class = "cardoor " id="doorimg1" src="../pic/cardoor1.png" style="width:100%">
             <div class="doornum ">1</div>
           </div>
             </div>
           </div>
 
-          <div class="doorline col-4">
+          <div class="doorline col-4"> 
             <div class="imgoutline center ">
-            <img class="goatimg center" src="../pic/goat.png"  width="100%" height="auto">
-            <div class="dooroverlay ">
+            <img class="goatimg center" src="../pic/goat.png" id="d2"  width="100%" height="auto">
+            <div class="dooroverlay " id="door2">
             <img class = "cardoor " id="doorimg2" src="../pic/cardoor1.png" style="width:100%">
             <div class="doornum ">2</div>
           </div>
@@ -111,27 +111,37 @@
           </div>
           <div class="doorline col-4">
             <div class="imgoutline center ">
-             <img class="goatimg center" src="../pic/goat.png"  width="100%" height="auto">
-             <div class="dooroverlay ">
+             <img class="goatimg center" src="../pic/goat.png" id="d3" width="100%" height="auto">
+             <div class="dooroverlay " id="door3">
              <img class = "cardoor " id="doorimg3" src="../pic/cardoor1.png" style="width:100%">
              <div class="doornum ">3</div>
            </div>
              </div>
            </div>
       <div class="row button-row  ">
-        <div id="startbuttonrow" class="text-center buttonsrow">
+        <div id="startbuttonrow" class="text-center buttonsrow" onclick="montyhall()">
           <button id="startbutton" type="button" class=" btn btn-success buttons">Start</button>
         </div>
-        <div id="selectrow" class="buttonsrow debug ">
-          <button id="door1btn" type="button" value ="1" class="btn btn-dark  buttons">Door 1</button>
-          <button id="door2btn" type="button" value ="2" class="btn btn-dark  buttons">Door 2</button>
-          <button id="door3btn" type="button" value ="3" class=" btn btn-dark  buttons">Door 3</button>
+        <div id="selectrow" class="buttonsrow">
+          <button id="door1btn" type="button" value ="1" 
+          class="btn btn-dark buttons" onclick="doorchoice(event)">
+                  Door 1</button>
+          <button id="door2btn" type="button" value ="2"
+           class="btn btn-dark buttons" onclick="doorchoice(event)">
+                  Door 2</button>
+          <button id="door3btn" type="button" value ="3"
+           class="btn btn-dark buttons" onclick="doorchoice(event)">
+                  Door 3</button>
         </div>
         <div id="stayswitchrow" class=" text-center buttonsrow">
-          <button id="switchbtn" type="button" class=" btn btn-dark  buttons">Switch to Door <span id="switchspan">#</span></button>
-          <button id="staybtn" type="button" class=" btn btn-dark  buttons">Stay with Door <span id="stayspan">#</span></button>  
+          <button id="switchbtn" type="button" 
+              class=" btn btn-dark buttons" onclick = "schoice(event)">
+              Switch to Door <span id="switchspan">#</span></button>
+          <button id="staybtn" type="button" 
+              class=" btn btn-dark  buttons" onclick = "schoice(event)">
+              Stay with Door <span id="stayspan">#</span></button>  
         </div>
-        <div id="restartrow" class=" text-center buttonsrow">
+        <div id="restartrow" onclick="restart(event)" class=" text-center buttonsrow">
           <button id="restartbtn" type="button" class=" btn btn-success  buttons">Restart</button>
             
         </div>
@@ -141,6 +151,32 @@
 
       
   </div>
+  </div>
+  <div id="testelement">dd</div>
+  <div class="container">
+    <table class="table table-striped">
+    <thead>
+      <td colspan="3" class="text-center">Number of Win Cases for Each Strategy</td>
+    </thead>
+      <tbody>
+      <tr>
+        <td>Switch</td>
+        <td id="switch#">0</td>
+        <td id="switch%">Percent</td>
+      </tr>
+      <tr>
+        <td>Stay</td>
+        <td id="stay#">0</td>
+        <td id="stay%">Percent</td>
+      </tr>
+    
+      <tr style="font-weight:bold">
+        <td >Total</td>
+        <td id="total#">0</td>
+        <td id="total%">100%</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 </div>
   
@@ -173,6 +209,8 @@
 
     
     </script>
+    
+       
     <script>
       var switch1 = 0;
       var stay1 = 0;
@@ -216,9 +254,7 @@
       let goatlist = [];
       let doorlist =[];
       let cardoor;
-      const doorbtnlist = Array.from(document.getElementsByClassName("doorbtn")
-        );
-      const sbtnlist = Array.from (document.getElementsByClassName("sbtn"));
+      
       function montyhall(){
         document.getElementById("doorimg1").src = "../pic/cardoor.png";
         document.getElementById("doorimg2").src = "../pic/cardoor.png";
@@ -229,20 +265,23 @@
         goatlist =[1,2,3];
         doorlist=[1,2,3];
         
-        sbtnlist.forEach(button =>{
-          button.style.display="none";
-        })
+        //sbtnlist.forEach(button =>{
+          //button.style.display="none";
+        //}) For every button list modifier, just going to adjust row style
+        document.getElementById("stayswitchrow").style.display="none";
         cardoor = randomIntFromInterval(1,3);
         // need to remove chosen car door from potential goat list
   
         var timingout= setTimeout(choosecardoor(cardoor),1000);
         goatlist.splice(cardoor-1,1);
         document.getElementById("testelement").innerHTML=goatlist;
-        doorbtnlist.forEach(button => {
-          button.style.display = "block"
-        });
+        //doorbtnlist.forEach(button => {
+          //button.style.display = "block"
+        //});
+        document.getElementById("startbuttonrow").style.display="none";
+        document.getElementById("selectrow").style.display="flex";
         document.getElementById("instruction").innerHTML = "Which door would you like to choose? Click the buttons below for your choice."
-      }
+      };
       let dchoice;
       function doorchoice(event){
         var x =event.target; 
@@ -258,9 +297,11 @@
           document.getElementById("doorimg3").src = "../pic/cardoorchosen.png";
         }
         doorlist.splice(dchoice-1,1)
-        doorbtnlist.forEach(button => {
-          button.style.display = "none"
-        });
+        //doorbtnlist.forEach(button => {
+          //button.style.display = "none"
+        //});
+        document.getElementById("selectrow").style.display="none";
+        
         //Implement a code to change the door to one with a star
   
         if (dchoice == cardoor){
@@ -286,10 +327,12 @@
           }
         }
   
-  
-        sbtnlist.forEach(button => {
-          button.style.display ="block"
-        })
+        //Instead of sbtn list, i need to make the start button 
+        //disappear and the switch buttons appear
+        //sbtnlist.forEach(button => {
+          //button.style.display ="block"
+        //})
+        
         if (goatchoice == 1){
           document.getElementById("door1").style.opacity = "0%";
         }
@@ -303,15 +346,18 @@
          "Door " + goatchoice + " is a goat. " + 
          "Would you like to STAY with Door " + dchoice +
           " or would you like to SWITCH to Door " + doorlist[0]+ "? "
+        document.getElementById("switchspan").innerHTML= doorlist[0];
+        document.getElementById("stayspan").innerHTML=dchoice;
+        document.getElementById("stayswitchrow").style.display="flex";
         // Need to reveal one of the goat doors
         //Need to change the text to ask to switch or stay
-  
         }
   
     function schoice(event){
-      sbtnlist.forEach(button => {
-          button.style.display ="none"
-        })
+      //sbtnlist.forEach(button => {
+        //  button.style.display ="none"
+        //})
+      document.getElementById("stayswitchrow").style.display="none";
       var sschoice = event.target.value; 
         if (sschoice =="stay"){
           if(dchoice==cardoor){
@@ -356,6 +402,7 @@
         }
       }
         total1++;
+      document.getElementById("restartrow").style.display="flex";
       //Switch or Stay
       // If Stay //unveil door choice
         // inside if stay was correct, have area up top say winner
@@ -376,10 +423,26 @@
   milliseconds);
       });
   }
+  function restart(event){
+    document.getElementById("restartrow").style.display="none";
+    // Want Restart to hide everything and then turn them back to goats.
+      //Reset door image
+      document.getElementById("doorimg1").src = "../pic/cardoor.png";
+      document.getElementById("doorimg2").src = "../pic/cardoor.png";
+      document.getElementById("doorimg3").src = "../pic/cardoor.png";
+      document.getElementById("door1").style.opacity = "100%";
+      document.getElementById("door2").style.opacity = "100%";
+      document.getElementById("door3").style.opacity = "100%";
+      // Reset goat image
+      document.getElementById("d1").src="../pic/goat.png";
+      document.getElementById("d2").src="../pic/goat.png";
+      document.getElementById("d3").src="../pic/goat.png";
+    document.getElementById("startbuttonrow").style.display="flex";
+  }
   
+  
+        
   </script>
-       
-  
 
 </body>
 </html>

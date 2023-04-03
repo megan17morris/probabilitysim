@@ -239,15 +239,9 @@ strong{
     opacity: 100%;
     transition: .5s ease;
   }
-  .dooroverlay:hover{
-    opacity: 0;
-}
-
 .button-row{
     width: 100%;
     margin: auto;
-    
-
 }
 .buttonsrow{
     height: 75px;
@@ -264,7 +258,7 @@ strong{
     margin-left: 20px;
 }
 #selectrow{
-    display: flex;
+
     justify-content: space-around;
     align-items: center;
     display: none;
@@ -272,7 +266,7 @@ strong{
 }
 
 #restartrow{
-    display: flex;
+   
     justify-content: center;
     align-items: center;
     display: none;
