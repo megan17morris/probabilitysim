@@ -8,13 +8,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../styles1.css">
   <script src="https://kit.fontawesome.com/7e394594e8.js" crossorigin="anonymous"></script>
-  
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <nav class="sticky-top navbar navbar-expand-lg bg-light ">
     <div class ="container-fluid">
       <!--Check about navbar brand-->
-      <a class="navbar-brand" href="#"><img src="../pic/dice.png" height="40px"></a>
+      <a class="navbar-brand" href="../index.html"><img src="../pic/dice.png" height="40px"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
       aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,10 @@
   
   <div id="allcontent">
     <div id="mySidebar" class="sidebar">
+      <div class="siderow">
+        <button id ="openbtn2" class=" closebutton"  value = "0" onclick="OCNavre();"><i class="fa fa-close"></i></button>  
       <h3 class="sidecontent">Megan Morris</h3>
+    </div>
       <img id="authorpic" src="../pic/Headshot1.jpg" alt="A picture of Megan" width = "150" height="auto">
       <div class="sidetext">
       <p> Hello! I'm Megan, and this probability simulator is my final project
@@ -64,19 +68,24 @@
     <div class="row row-cols-auto justify-content-center">
      <div class=""><a class= "iconbox  " href="https://github.com/magenta1585"> <img class=  "icon" src="../pic/github-mark-white.png" alt="githublogo" width="30 px" height="30px"> </a> </div>
      <div class=""><a class="iconbox "  href= "https://www.linkedin.com/in/megan-morris-7aa4711a3/" ><img class= "icon" src="../pic/In-White.png" alt="LinkedIn logo" width="30 px" height="30px"> </a></div>
-     <div class=""><a class= "iconbox " href= "../csresume23.pdf"> <i class=" icon fa-solid fa-file fa-2xl"></i> </a></div>
+     <div class=""><a class= "iconbox " href= "csresume23.pdf"> <i class=" icon fa-solid fa-file fa-2xl"></i> </a></div>
     </div>
   </div> 
-    
   
-  <div id="main" class="main">
+  <div id="main" class=" main">
     <button id ="openbtn1" class="openbtn"  value = "0" onclick="OCNav()"><i class="fa-solid fa-user"></i> &nbsp About Me</button>  
-    <div class="content">
-    <h2 class="text-center"> Monty Hall</h2>
+    <div class=" content">
+      <h1 style="margin-top: 15px">The Monty Hall Problem</h1>
+      <p>
+        The Monty Hall Problem is an excellent example of the way that probability can often be unintuitive. In this problem, you have three doors, behind one of which there is a car.
+      This problem often stumps new students who neglect to understand how having an option to stay or switch will effect your final odds. Use the simulator below to understand
+    how this problem operates. You can also use the table below to run any number under 1500 rounds automatically to see the averages of your outcomes.   </p>
 
-    <div id="problemwalkthrough" class="text-center ">
-      <p id="problemintro">
-      Hello! Welcome to the Monty Hall Problem! 
+      <hr>
+
+    <div class="problemwalkthrough containers text-center contop">
+      <p class="problemintro">
+      Welcome to the Monty Hall Problem! 
     </p>
     <p id="instruction">Behind two of these doors there are goats. Behind one of the doors, there is a car.
       During this demonstration, you will be able to first select one of the three doors. Once you have chosen,
@@ -85,8 +94,7 @@
       <br><br>
       <strong> What will you pick?</strong>
     </p>
-
-    </div>
+    <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
     <div class="multidooroutline">
     
         <div class="row container-fluid doorcontain ">
@@ -94,7 +102,7 @@
            <div class="imgoutline center ">
             <img class="goatimg center" src="../pic/goat.png" id="d1"  width="100%" height="auto">
             <div class="dooroverlay" id="door1">
-            <img class = "cardoor " id="doorimg1" src="../pic/cardoor1.png" style="width:100%">
+            <img class = "cardoor " id="doorimg1" src="../pic/cardoor.png" style="width:100%">
             <div class="doornum ">1</div>
           </div>
             </div>
@@ -104,7 +112,7 @@
             <div class="imgoutline center ">
             <img class="goatimg center" src="../pic/goat.png" id="d2"  width="100%" height="auto">
             <div class="dooroverlay " id="door2">
-            <img class = "cardoor " id="doorimg2" src="../pic/cardoor1.png" style="width:100%">
+            <img class = "cardoor " id="doorimg2" src="../pic/cardoor.png" style="width:100%">
             <div class="doornum ">2</div>
           </div>
             </div>
@@ -113,74 +121,116 @@
             <div class="imgoutline center ">
              <img class="goatimg center" src="../pic/goat.png" id="d3" width="100%" height="auto">
              <div class="dooroverlay " id="door3">
-             <img class = "cardoor " id="doorimg3" src="../pic/cardoor1.png" style="width:100%">
+             <img class = "cardoor " id="doorimg3" src="../pic/cardoor.png" style="width:100%">
              <div class="doornum ">3</div>
            </div>
              </div>
            </div>
       <div class="row button-row  ">
         <div id="startbuttonrow" class="text-center buttonsrow" onclick="montyhall()">
-          <button id="startbutton" type="button" class=" btn btn-success buttons">Start</button>
+          <button id="startbutton" type="button" class=" btn gamebuttons buttons">Start</button>
         </div>
         <div id="selectrow" class="buttonsrow">
           <button id="door1btn" type="button" value ="1" 
-          class="btn btn-dark buttons" onclick="doorchoice(event)">
+          class="btn gamebuttons buttons" onclick="doorchoice(event)">
                   Door 1</button>
           <button id="door2btn" type="button" value ="2"
-           class="btn btn-dark buttons" onclick="doorchoice(event)">
+           class="btn gamebuttons buttons" onclick="doorchoice(event)">
                   Door 2</button>
           <button id="door3btn" type="button" value ="3"
-           class="btn btn-dark buttons" onclick="doorchoice(event)">
+           class="btn gamebuttons buttons" onclick="doorchoice(event)">
                   Door 3</button>
         </div>
         <div id="stayswitchrow" class=" text-center buttonsrow">
           <button id="switchbtn" type="button" 
-              class=" btn btn-dark buttons" onclick = "schoice(event)">
+              class=" btn gamebuttons buttons" value="switch" onclick = "schoice(event)">
               Switch to Door <span id="switchspan">#</span></button>
-          <button id="staybtn" type="button" 
-              class=" btn btn-dark  buttons" onclick = "schoice(event)">
+          <button id="staybtn" type="button" value="stay"
+              class=" btn gamebuttons  buttons" onclick = "schoice(event)">
               Stay with Door <span id="stayspan">#</span></button>  
         </div>
         <div id="restartrow" onclick="restart(event)" class=" text-center buttonsrow">
-          <button id="restartbtn" type="button" class=" btn btn-success  buttons">Restart</button>
+          <button id="restartbtn" type="button" class=" btn gamebuttons buttons">Restart</button>
             
         </div>
 
       </div>
       </div>
 
-      
+    </div>
   </div>
-  </div>
-  <div id="testelement">dd</div>
-  <div class="container">
-    <table class="table table-striped">
-    <thead>
-      <td colspan="3" class="text-center">Number of Win Cases for Each Strategy</td>
+ <!-- <div id="testelement">dd</div>-->
+ <div class=" containers tcontain text-center contop">
+  <p class="problemintro">
+  Which strategy is the best? 
+</p>
+<div class="explainer">
+  <p>In the Monty Hall problem, switching will give you the best opportunity to win a car. If you switch, you would win approximately \(\frac{2}{3}\) of the time, 
+    while if you stay, you would only win \(\frac{2}{3}\) of the time. 
+  </p>
+  <p>
+    Imagine that you choose the car door correctly, which happens \(\frac{1}{3}\) of the time. You will then be shown one of the two goats at random. 
+    If you <span style="font-weight: bold">stay</span>, you win.
+  </p>
+  <p>
+    Now, imagine that the door you choose originally is a goat, which happens \(\frac{2}{3}\) of the time. Then you will
+     be shown the other goat. In this case, you must <span style="font-weight:bold ;">switch</span> to win.
+  </p>
+</div>
+  <br>
+<hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
+    <table class="table stable table-striped">
+    <thead >
+      <td colspan="3" class="strathead text-center">Number of Win Cases for Each Strategy</td>
     </thead>
       <tbody>
       <tr>
         <td>Switch</td>
-        <td id="switch#">0</td>
+        <td id="switch#" onchange="" value="0">0</td>
         <td id="switch%">Percent</td>
       </tr>
       <tr>
         <td>Stay</td>
-        <td id="stay#">0</td>
+        <td id="stay#" onchange="" value="0">0</td>
         <td id="stay%">Percent</td>
       </tr>
     
       <tr style="font-weight:bold">
         <td >Total</td>
-        <td id="total#">0</td>
+        <td id="total#" value="0">0</td>
         <td id="total%">100%</td>
       </tr>
     </tbody>
   </table>
+  <div class="simulatorounds" id="simulatorrounds">How many rounds to simulate? &nbsp; <input id="roundsinput" class="roundsinput" max="1500" type="number" step="1">
+    <br>
+    <button id="startbutton" type="button" onclick="automontyhall()" class=" btn gamebuttons simbutton ">Go!</button>
+    <button id="startbutton" type="button" onclick="reset()" class=" btn gamebuttons simbutton ">Reset Table</button>
+    <div id="alertv" class="alertv alert alert-danger">The value entered must be less than 1500 and greater than 0. Any non integers will be rounded up.</div>
   </div>
 </div>
-  
-  <script>
+<div class=" containers chartcontainer  text-center ">
+  <p class="problemintro">
+  Visual Results 
+</p>
+<div class="explainer">
+  <p>As we run the simulation a large number of times, we should see that if you stay, you should win roughly \(\frac{1}{3}\) of the time
+    with this chance increasing to \(\frac{2}{3}\) of the time if you switch. Enter in a large number of rounds to the table and see how the 
+    results change.
+  </p>
+  <br>
+  <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
+  <div class="canvascont">
+  <canvas id="myPie" class="piecanvas" ></canvas>
+</div>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+ <!-- <script>
     function openNav() {
       // maybe try to turn it into one function //
       document.getElementById("mySidebar").style.width = "250px";
@@ -210,239 +260,10 @@
     
     </script>
     
-       
-    <script>
-      var switch1 = 0;
-      var stay1 = 0;
-      var total1 = 0;
-      document.getElementById("switch#").innerHTML= switch1;
-      document.getElementById("stay#").innerHTML=stay1;
-      document.getAnimations("total#").innerHTML=total1;
-      document.getElementById("switch%"). innerHTML = "0%";
-      document.getElementById("stay%"). innerHTML = "0%"
-      
-      //document.getElementById("switch%"). innerHTML = (switch1/total1).toFixed(2);
-      //document.getElementById("stay%"). innerHTML = (stay1/total1).toFixed(2); 
-      function randomIntFromInterval (min,max){
-          return Math.floor(Math.random()*(max-min+1) + min)
-      }
-      function timeouttest(){
-        document.getElementById("testelement").innerHTML="this should change after a number of seconds"
-      }
-      async function placecardoor(cardoor){
-  
-      await delay(1000);
-  
-      if (cardoor == 1){
-              document.getElementById("d1").src="../pic/car.png";
-          }
-          else if (cardoor==2){
-              document.getElementById("d2").src="../pic/car.png";
-          }
-          else{
-              document.getElementById("d3").src="../pic/car.png";
-          }
-  
-  }
-  
-      function choosecardoor(cardoor){
-          document.getElementById("d1").src="../pic/goat.png";
-          document.getElementById("d2").src="../pic/goat.png";
-          document.getElementById("d3").src="../pic/goat.png";
-          var newtimeout =setTimeout(placecardoor(cardoor), 1000);
-      }
-      let goatlist = [];
-      let doorlist =[];
-      let cardoor;
-      
-      function montyhall(){
-        document.getElementById("doorimg1").src = "../pic/cardoor.png";
-        document.getElementById("doorimg2").src = "../pic/cardoor.png";
-        document.getElementById("doorimg3").src = "../pic/cardoor.png";
-        document.getElementById("door1").style.opacity = "100%";
-        document.getElementById("door2").style.opacity = "100%";
-        document.getElementById("door3").style.opacity = "100%";
-        goatlist =[1,2,3];
-        doorlist=[1,2,3];
-        
-        //sbtnlist.forEach(button =>{
-          //button.style.display="none";
-        //}) For every button list modifier, just going to adjust row style
-        document.getElementById("stayswitchrow").style.display="none";
-        cardoor = randomIntFromInterval(1,3);
-        // need to remove chosen car door from potential goat list
-  
-        var timingout= setTimeout(choosecardoor(cardoor),1000);
-        goatlist.splice(cardoor-1,1);
-        document.getElementById("testelement").innerHTML=goatlist;
-        //doorbtnlist.forEach(button => {
-          //button.style.display = "block"
-        //});
-        document.getElementById("startbuttonrow").style.display="none";
-        document.getElementById("selectrow").style.display="flex";
-        document.getElementById("instruction").innerHTML = "Which door would you like to choose? Click the buttons below for your choice."
-      };
-      let dchoice;
-      function doorchoice(event){
-        var x =event.target; 
-        document.getElementById("testelement").innerHTML= "The door choice is " + x.value;
-        dchoice=x.value;
-        if (dchoice == 1){
-          document.getElementById("doorimg1").src = "../pic/cardoorchosen.png";
-        }
-        else if (dchoice == 2){
-          document.getElementById("doorimg2").src = "../pic/cardoorchosen.png";
-        }
-        else{
-          document.getElementById("doorimg3").src = "../pic/cardoorchosen.png";
-        }
-        doorlist.splice(dchoice-1,1)
-        //doorbtnlist.forEach(button => {
-          //button.style.display = "none"
-        //});
-        document.getElementById("selectrow").style.display="none";
-        
-        //Implement a code to change the door to one with a star
-  
-        if (dchoice == cardoor){
-          goatchoice=goatlist[randomIntFromInterval(0,1)]
-          for (var i = 0; i < 2; i++){
-            if (doorlist[i]==goatchoice){
-              doorlist.splice(i,1);
-            }
-          }
-        }
-        else{
-          for (var i = 0; i < 2; i++){
-            if (goatlist[i] == dchoice){
-              goatlist.splice(i,1);
-            }
-          }
-  
-          goatchoice = goatlist[0];
-          for (var i = 0; i < 2; i++){
-            if (doorlist[i] == goatchoice){
-              doorlist.splice(i,1);
-            }
-          }
-        }
-  
-        //Instead of sbtn list, i need to make the start button 
-        //disappear and the switch buttons appear
-        //sbtnlist.forEach(button => {
-          //button.style.display ="block"
-        //})
-        
-        if (goatchoice == 1){
-          document.getElementById("door1").style.opacity = "0%";
-        }
-        else if (goatchoice == 2){
-          document.getElementById("door2").style.opacity = "0%";
-        }
-        else{
-          document.getElementById("door3").style.opacity = "0%";
-        }
-        document.getElementById("instruction").innerHTML =
-         "Door " + goatchoice + " is a goat. " + 
-         "Would you like to STAY with Door " + dchoice +
-          " or would you like to SWITCH to Door " + doorlist[0]+ "? "
-        document.getElementById("switchspan").innerHTML= doorlist[0];
-        document.getElementById("stayspan").innerHTML=dchoice;
-        document.getElementById("stayswitchrow").style.display="flex";
-        // Need to reveal one of the goat doors
-        //Need to change the text to ask to switch or stay
-        }
-  
-    function schoice(event){
-      //sbtnlist.forEach(button => {
-        //  button.style.display ="none"
-        //})
-      document.getElementById("stayswitchrow").style.display="none";
-      var sschoice = event.target.value; 
-        if (sschoice =="stay"){
-          if(dchoice==cardoor){
-            document.getElementById("instruction").innerHTML = 
-            "You win a Car!"
-            stay1++;
-          }
-          else{
-            document.getElementById("instruction").innerHTML = 
-            "You lost but you can have this goat :("
-            switch1++;
-          }
-          if (dchoice==1){
-            document.getElementById("door1").style.opacity = "0%";
-          }
-          else if (dchoice==2){
-            document.getElementById("door2").style.opacity = "0%";
-          }
-          else{
-            document.getElementById("door3").style.opacity = "0%";
-          }
-        }
-      else{
-        if(dchoice==cardoor){
-          document.getElementById("instruction").innerHTML = 
-            "You lost but you can have this goat :("
-            stay1++;
-          }
-        else{
-          switch1++;
-          document.getElementById("instruction").innerHTML = 
-            "You win a Car!"
-        }
-        if (doorlist[0]==1){
-          document.getElementById("door1").style.opacity = "0%";
-        }
-        else if(doorlist[0]==2){
-          document.getElementById("door2").style.opacity = "0%";
-        }
-        else if (doorlist[0]==3){
-          document.getElementById("door3").style.opacity = "0%";
-        }
-      }
-        total1++;
-      document.getElementById("restartrow").style.display="flex";
-      //Switch or Stay
-      // If Stay //unveil door choice
-        // inside if stay was correct, have area up top say winner
-        // if stay incorrect, change up top to loser
-      // If switch, unveil last istem in doorlist
-        // if switch correct, change to winner
-        // if switch incorrect, change to loser
-        document.getElementById("switch#").innerHTML=switch1;
-        document.getElementById("stay#").innerHTML=stay1;
-        document.getElementById("total#").innerHTML=total1;
-        document.getElementById("switch%"). innerHTML = (switch1/total1).toFixed(2)*100 +"%";
-        document.getElementById("stay%"). innerHTML = (stay1/total1).toFixed(2)*100 + "%"; 
-      }
-  
-  function delay(milliseconds){
-    return new Promise(resolve => {
-      setTimeout(resolve,
-  milliseconds);
-      });
-  }
-  function restart(event){
-    document.getElementById("restartrow").style.display="none";
-    // Want Restart to hide everything and then turn them back to goats.
-      //Reset door image
-      document.getElementById("doorimg1").src = "../pic/cardoor.png";
-      document.getElementById("doorimg2").src = "../pic/cardoor.png";
-      document.getElementById("doorimg3").src = "../pic/cardoor.png";
-      document.getElementById("door1").style.opacity = "100%";
-      document.getElementById("door2").style.opacity = "100%";
-      document.getElementById("door3").style.opacity = "100%";
-      // Reset goat image
-      document.getElementById("d1").src="../pic/goat.png";
-      document.getElementById("d2").src="../pic/goat.png";
-      document.getElementById("d3").src="../pic/goat.png";
-    document.getElementById("startbuttonrow").style.display="flex";
-  }
-  
-  
-        
-  </script>
+     -->  
+     <script src="../probability.js"></script>
+    <script src="montyhall.js"></script>
+    <script src="../charting.js"></script>
 
 </body>
 </html>
