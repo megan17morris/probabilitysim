@@ -8,7 +8,7 @@ var ctx= new Chart(myPie, {
       label: '',
       data: [5, 5],
       backgroundColor:['#059DC0', '#6AF2F0'],
-      borderColor:['#059DC0','#6AF2F0']
+      borderColor:['black','black']
     }]
   },
   options:{
@@ -25,7 +25,21 @@ var ctx= new Chart(myPie, {
         font:{
           size: 18
         }}
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context){
+            var label = context.label,
+                currentValue = context.raw,
+                total = context.chart._metasets[context.datasetIndex].total;
+  
+            var percentage = parseFloat((currentValue/total*100).toFixed(1));
+  
+            return label + ": " +currentValue + ' (' + percentage + '%)';
+          }
+        }
       }
+      
     }
   }
 });
