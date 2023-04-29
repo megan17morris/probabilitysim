@@ -1,17 +1,32 @@
 *{
     box-sizing: border-box;
 }
+
+/* Colors:
+Aqua-#04ECF0
+Turquoise-#04D4F0
+Cyan- #6AF2F0
+Blue Grotto-#059DC0
+*/
 /*Nav Menu */
 /* Want to center Items when compressed
 Also want them to be highlighted on hover.*/
 
 .navbar{
     display: flex;
+    background-color: #eaeae8;
+    margin:0px;
+    padding: 0;
 }
 .navbar-nav{
     flex-grow:1;
+   
     
 }
+.sideicon{
+    margin-right: 0px;
+}
+
 .nav-item{
     text-align: center;
     flex-grow: 1;
@@ -20,7 +35,8 @@ Also want them to be highlighted on hover.*/
 
 }
 .nav-item a:hover{
-    background-color: lightblue;
+    background-color:rgba(51, 204, 204, .9);
+    color: white;
 }
 /*Creating Sidenav Menu */
 .iconbox{
@@ -40,23 +56,30 @@ Also want them to be highlighted on hover.*/
 }
 .problemcontainer{
     width: 30%;
+    padding-bottom: 50px;
+}
+.closebutton{
+    position: absolute;
+    right:1px;
+    top:2px;
+    background-color:#33CCCC;
+    color:white;
+    border: none;
+    font-size: x-large;
+    display:none;
 }
 .sidebar{
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
-    top: 2;
-    left: 1;
-    background-color: black;
+    background-color:#33CCCC;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 #allcontent{
     position:relative;
-   
-
 }
 
 
@@ -70,31 +93,45 @@ Also want them to be highlighted on hover.*/
     margin-left: 50px;
 }
 .sidebar{
-    color: white;
     text-align: center;
 }
+
 .sidecontent{
-    padding-top: 20px;
+    color:white;
+    padding-top: 0px;
+    padding-bottom: 0;
+    text-shadow: 3px 3px 3px black;
 }
 #authorpic{
-    margin-top: 20px;
+    margin-top: 5px;
+    padding-top: 0;
     border-radius: 50%;
+    border:5px white;
+    border-style:ridge;
+    max-width: 50%;
 }
 .sidetext{
-    padding-top: 25px;
+    background-color: white;
+    color: black;
     text-align: left;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: 10px 10px;
+    padding: 10px 5px 5px 5px;
+    border-radius: 10px;
+    border: grey 2px solid;
+    opacity: 100%;
+    font-size: small;
 }
 .openbtn{
     position: relative;
     font-size: 20px;
     cursor: pointer;
-    background-color: #111;
+    background-color: #33CCCC;
     color: white;
     padding: 10px 15px;
     border: none;
     display:inline-block;
+    /*border-top-right-radius: 5px;*/
+    border-bottom-right-radius: 5px;
 }
 h2{
     font-size: 50px;
@@ -109,7 +146,6 @@ h2{
 /* When height is less than 450ps, change the style of sidenav */
 
 @media screen and (max-height: 450px){
-    .sidebar{padding-top: 15px;}
     .sidebar a {font-size: 18px;}
 }
 /* Styling the links */ 
@@ -125,7 +161,10 @@ change on hover? */
     border: 4px green dotted;
 }
 .nav-item .active{
-    background-color: grey;
+    background-color: #808080;
+}
+.nav-item .active:hover{
+    color:white;
 }
 
 
@@ -133,25 +172,62 @@ change on hover? */
 .main{
     position: relative;
 }
-#problemintro{
+.problemintro{
     font-size: x-large;
     font-weight: bold;
-    background-color:black;
+    background-color:#059DC0;
     color: white;
     opacity: 90%;
     border-radius: 2px ;
 }
 strong{
-    background-color: black;
-    color:white;
-    border-radius: 12px;
+    color:black;
     padding: 10px;
+    font-size: xx-large;
 }
-#problemwalkthrough{
-    width: 90%;
-    margin: 0px auto;
+.instruction{
+    font-size: large;
+    margin:1px 10px;
+    display: block;
+    
+}
+.problemwalkthrough{
+    width: 100%;
+    
+}
+.containers{
+    margin-bottom: 20px ;
+    padding: 0px;
     border: 2px solid black;
     border-radius: 4px;
+}
+.canvascont{
+    padding: 10px;
+    margin: 10px auto;
+    display: relative;
+    width:fit-content;
+    
+}
+.piecanvas{
+    padding: 20px;
+    height: 400px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.tcontain{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.strathead{
+    font-size: large;
+    font-weight: bold;
+}
+.stable{
+    width: 100%;
+    margin: 20px auto;
 }
 #stepsexplainer{
     padding: 0 20px;
@@ -161,16 +237,11 @@ strong{
     display: block;
     position: relative;
     height: 450px;
-    width:90%;
+    width:100%;
     margin: 0px auto;
     padding-top: 15px;
+    padding-bottom: 40px;
     align-content: center;
-    border: 2px solid black;
-    border-top:none;
-    border-radius: 4px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0;
-   
 }
 
 .doorcontain{
@@ -185,7 +256,7 @@ strong{
     
 }
 .imgoutline{
-    
+    position: relative;
     height: 95%;
     width: 90%;
     border: 2px black solid;
@@ -204,13 +275,28 @@ strong{
     align-items: center;
     justify-content: center;
 }
+.gamebuttons{
+    background-color: #07a0c2;
+    color:white;
+}
+.gamebuttons:hover{
+    background-color: #056f87;
+    color:white;
+}
+.gamebuttons:active{
+    background-color: #056f87;
+    color:white;
+}
+
 #stayswitchrow{
     display: flex;
     display: none;
     align-items: center;
     justify-content: center;
 }
-
+#cards{
+    margin: 0px 20px;
+}
 
 .cardoor{
     height: 100%;
@@ -226,6 +312,9 @@ strong{
     color:black;
   }
   .goatimg{
+    position:relative;
+    max-width: 100%;
+    max-height: 100%;
     
   }
   .dooroverlay{
@@ -276,3 +365,120 @@ strong{
     min-width: 20%;
     font-size:x-large;
 }
+
+
+/*simulator*/
+.simbutton{
+    font-size: larger;
+    font-weight: bold;
+    display:inline-block;
+    margin-top: 10px;
+    margin-left: 50px;
+
+}
+.simulatorounds{   
+    display: block;
+    border:#056f87 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    width:fit-content;
+    font-size: large; 
+}
+.roundsinput{
+    width:70px;
+    border-radius: 7px;
+    background-color: rgba(51, 204, 204,50%);
+    color:black;
+    text-align: center;
+}
+#resetbutton{
+    margin-top: 20px;
+    border:#056f87 2px solid;
+}
+.alertv{
+    margin-top: 30px;
+    height: 100%;
+    align-items: center;
+    display: none;
+}
+.explainer{
+    text-align:justify;
+    margin: 2%;
+    font-size: medium;
+}
+
+@media screen and (min-width: 1100px) { 
+    .contop{
+        width: 47%;
+        margin:20px 15px;
+        float:left;
+    }
+    .chartcontainer{
+        clear:left;
+        width: 60%;
+        margin:10px auto;
+    }
+    
+  }
+/* Chrome, Safari, Edge, Opera
+Removes the arrows from input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/*Birthday Problem*/
+
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    border-radius:5px;
+    background: rgba(5, 157, 192, 40%); /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    position: relative;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url('/pic/birthday-cupcake.png');
+    background-size: contain;
+    background-position: 0px 30%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  /*.slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+      border-radius: 50%;
+    background-image: url('/pic/birthday-cupcake.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  */
+  .math-container{
+    background-color: rgba(51, 204, 204, 20%);
+    width: 70%;
+    margin: 25px auto;
+    padding: 15px;
+    border-radius: 10px;
+  }

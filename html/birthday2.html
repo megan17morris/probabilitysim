@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Birthday Problem</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../styles1.css">
+  <script src="https://kit.fontawesome.com/7e394594e8.js" crossorigin="anonymous"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" type="image/x-icon" href="../pic/dice.png">
+  
+</head>
+<body>
+  <nav class="sticky-top navbar navbar-expand-lg bg-light ">
+    <div class ="container-fluid">
+      <!--Check about navbar brand-->
+      <a class="navbar-brand" href="../index.html"><img src="../pic/dice.png" height="40px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="montyhall2.html">Monty Hall</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="birthday.html">Birthday Problem </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="letters2.html">Scrambled Letters</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <!--Side Bar.
+  I want the sidebar to be collapsable with only a person icon. When clicked a 
+  page will come out that will tell about me. -->
+  
+  <div id="allcontent">
+    <div id="mySidebar" class="sidebar">
+      <div class="siderow">
+        <button id ="openbtn2" class=" closebutton"  value = "0" onclick="OCNavre();"><i class="fa fa-close"></i></button>  
+      <h3 class="sidecontent">Megan Morris</h3>
+    </div>
+      <img id="authorpic" src="../pic/Headshot1.jpg" alt="A picture of Megan" width = "150" height="auto">
+      <div class="sidetext">
+      <p> Hello! I'm Megan, and this probability simulator is my final project
+        for CS50. 
+        I graduated with my Bachelor's degree in Applied Mathematics and French from
+        UC Berkeley and I am currently using my free time to teach myself programming
+        and computer science. 
+        
+        I am passionate about learning and I am always looking for new collaborations
+        and projects to work on to keep developing my programming skills!
+       </p>
+    </div>
+    <div class="row row-cols-auto justify-content-center">
+     <div class=""><a class= "iconbox  " href="https://github.com/magenta1585"> <img class=  "icon" src="../pic/github-mark-white.png" alt="githublogo" width="30 px" height="30px"> </a> </div>
+     <div class=""><a class="iconbox "  href= "https://www.linkedin.com/in/megan-morris-7aa4711a3/" ><img class= "icon" src="../pic/In-White.png" alt="LinkedIn logo" width="30 px" height="30px"> </a></div>
+     <div class=""><a class= "iconbox " href= "csresume23.pdf"> <i class=" icon fa-solid fa-file fa-2xl"></i> </a></div>
+    </div>
+  </div> 
+  
+  <div id="main" class=" main">
+    <button id ="openbtn1" class="openbtn"  value = "0" onclick="OCNav()"><i class="fa-solid fa-user"></i> &nbsp About Me</button>  
+    <div class=" content">
+      <h1 style="margin-top: 15px">The Birthday Problem</h1>
+      <p>
+        Let's assume that the chance of having a birthday on a certain day is equal for every day of the year. 
+        How many people need to enter a room before the probability that two individuals share a birthday is less than 50%? 
+        Read the explanations below and the interactive slider provided to find out. 
+       </p>
+
+      <hr>
+      <div class="problemwalkthrough containers text-center contop">
+        <p class="problemintro">
+        The Case for 2 People
+      </p>
+      <div class="instruction"><p> If there is only 1 person in the room, the birthday problem is trivial. There is a 0% chance of two people sharing
+        a birthday since there is only 1 person. </p>
+      <p> If there are only 2 people in the room, the problem is still simple.
+        The probability that the 2 people share a birthday is <span class="lead"> 1&frasl;365 </span>
+        as the second person in the room has a 1 out of 365 chance of being
+        born on the same day as the first person.
+      </p>
+        
+    </div>
+      <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
+      <div class="math-container">
+        <h3>2 People</h3>
+        <p>
+          P(The 2 people share a birthday)  = $$ 1 * \frac{1}{365} = \frac{1}{365} $$
+        </p>
+
+      </div>
+    </div>
+    <div class="problemwalkthrough containers text-center contop">
+      <p class="problemintro">
+       A Case of 3 People
+    </p>
+    <div class="instruction">
+     <p> Imagine Ashley, Bob, and Charlie enter the room in that order. </p>
+    <p> How do we figure out the probability that at least two of them share a birthday? 
+    </p>
+    <p> We can first add the probability that each pair of people share a birthday.</p>
+    <p>
+      But wait! if we do that, then we also have to account for the fact that adding in this
+       way means that we added the probability of all 3 sharing a birthday three times,
+        so we must subtract out that probability.
+    </p>
+    <p> Rather complicated right? Let's move to the generalized solution to see how we can make this problem easier.</p>
+  </div>
+    <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
+    <div class="math-container text-center">
+      <h3>3 People</h3>
+      <p>
+        P(At least 2 out of 3 share a birthday)  = 
+      </p>
+      <p>P(A & B) + P(B & C) + P(A & C) - 2 &#215 P(A & B & C) =</p>
+      <p>$$\frac{1}{365} + \frac{1}{365} + \frac{1}{365} - 2((\frac{1}{365})^{2})$$</p>
+    </div>
+    </div>
+    
+    <div class="problemwalkthrough containers text-center contop">
+      <p class="problemintro">
+       The Generalized Case  </p>
+       <div class="instruction">
+       <p> As you can see with the case of three people, this problem becomes rather difficult quickly if 
+        we don't find a simpler way to approach it. </p>
+      <p>Instead of trying to find the probabilities of any given two people sharing a birthday, we can use
+        a trick of probability to simplify. Instead, consider the probability that no two people in the room share a birthday.
+      </p>
+      <p>
+        What does this mean? If no two people share a birthday, that means that everyone in the room has a distinct birthday.
+        While this is the opposite of what we are trying to find, we can use the fact that 1 minus the probability
+        of an event not happening is equal to the event happening. Look below to see how this applies to the case of N people.
+      </p>
+      </div>
+      <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
+      <div class="math-container">
+        <h3>N people</h3>
+        <p>
+          1 - P(No one shares a birthday) = <span class=""> $$ 1 - (1 * \frac{364}{365}  * ... 
+            \frac{365 - (n-1)}{365} )
+            $$</span> 
+        </p>
+      </div>
+      </div>
+      <div class="problemwalkthrough containers text-center contop">
+        <p class="problemintro">
+         Try it Yourself!  </p>
+         <div class="instruction">
+         <p> Use the slider below to change the number of individuals in the room and see how the equation and the probability that at least two people in the room share a birthday. 
+        </p>
+        <p>Try to find the lowest number of people in a room such that the probability that at least two individuals share a birthday is at least 50%. Is this number lower or higher than expected.
+          </p>
+          <p>
+            Please be warned that although the probability may show 100% for higher values, using the equation as written out, you can see that the value will not be truly 0 until there are at least 366 people in the room. This is because unless there are 366 individuals in the room, there is a chance that all individuals have different birthdays, though this probability gets smaller and smaller with each person added to the room.
+          </p>
+        </div>
+        <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
+          <div class="slidecontainer">
+            <input type="range" min="1" max="156" value="10" class=" slider" id="myRange">
+            <input type="number" min="1" max="156" step="1" id="demo" value="20"></input>
+          </div>
+          <div class="probability">
+            <div class="probcontainer">
+              <div class="Probability Text">
+                <h3>How to Solve</h3>
+                <div id="tb1">
+                  Probability that at least two in the room share a birthday
+                </div>
+                <div id="pb1">
+                  Percentage likelihood that at least two in the room share a birthday. 
+                </div>
+
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+    
+</div>
+</div>
+</div>
+</body>
+<script src="../probability.js" ></script>
+</html>

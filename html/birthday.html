@@ -199,6 +199,6 @@ function birthdaytext(num){
   return btext;
 }
 
-document.getElementById("tester").innerHTML=birthdayprob(152).toFixed(30)*100 + "%";
+document.getElementById("tester").innerHTML=(birthdayprob(152)*100).toFixed(2) + "%";
 document.getElementById("testing").innerHTML=birthdaytext(8);
 </script>
