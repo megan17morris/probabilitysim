@@ -33,10 +33,13 @@
           <a class="nav-link " href="montyhall2.html">Monty Hall</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="birthday.html">Birthday Problem </a>
+          <a class="nav-link active" href="birthday2.html">Birthday Problem </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="letters2.html">Scrambled Letters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="target.html">Target Practice</a>
         </li>
       </ul>
     </div>
@@ -82,6 +85,7 @@
        </p>
 
       <hr>
+      <div class="row row1">
       <div class="problemwalkthrough containers text-center contop">
         <p class="problemintro">
         The Case for 2 People
@@ -95,8 +99,9 @@
       </p>
         
     </div>
-      <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
-      <div class="math-container">
+      <hr class="hr1">
+      <div class="mcontain2">
+      <div class="math-container mcon2">
         <h3>2 People</h3>
         <p>
           P(The 2 people share a birthday)  = $$ 1 * \frac{1}{365} = \frac{1}{365} $$
@@ -104,6 +109,7 @@
 
       </div>
     </div>
+  </div>
     <div class="problemwalkthrough containers text-center contop">
       <p class="problemintro">
        A Case of 3 People
@@ -120,7 +126,8 @@
     </p>
     <p> Rather complicated right? Let's move to the generalized solution to see how we can make this problem easier.</p>
   </div>
-    <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
+    <hr class="hr1">
+    <div class="mcontain">
     <div class="math-container text-center">
       <h3>3 People</h3>
       <p>
@@ -130,7 +137,9 @@
       <p>$$\frac{1}{365} + \frac{1}{365} + \frac{1}{365} - 2((\frac{1}{365})^{2})$$</p>
     </div>
     </div>
-    
+  </div>
+</div>
+  <div class="row row1">
     <div class="problemwalkthrough containers text-center contop">
       <p class="problemintro">
        The Generalized Case  </p>
@@ -146,8 +155,9 @@
         of an event not happening is equal to the event happening. Look below to see how this applies to the case of N people.
       </p>
       </div>
-      <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
-      <div class="math-container">
+      <hr class="hr1">
+      <div class="mcontain3">
+      <div class="math-container mcon3">
         <h3>N people</h3>
         <p>
           1 - P(No one shares a birthday) = <span class=""> $$ 1 - (1 * \frac{364}{365}  * ... 
@@ -155,7 +165,9 @@
             $$</span> 
         </p>
       </div>
-      </div>
+    
+    </div>
+  </div>
       <div class="problemwalkthrough containers text-center contop">
         <p class="problemintro">
          Try it Yourself!  </p>
@@ -168,35 +180,33 @@
             Please be warned that although the probability may show 100% for higher values, using the equation as written out, you can see that the value will not be truly 0 until there are at least 366 people in the room. This is because unless there are 366 individuals in the room, there is a chance that all individuals have different birthdays, though this probability gets smaller and smaller with each person added to the room.
           </p>
         </div>
-        <hr style="border-top: 3px solid black; opacity: 100%; margin: 0 8px;">
-          <div class="slidecontainer">
+        <hr class="hr1">
+        <div class="mcontain" >
+        <div class="slidecontainer">
             <input type="range" min="1" max="156" value="10" class=" slider" id="myRange">
-            <input type="number" min="1" max="156" step="1" id="demo" value="20"></input>
+            <div class="inputheading">Enter the number of people in the room: &nbsp &nbsp <input type="number" min="1" max="156" step="1" id="demo" value="20"></input></div>
+            
           </div>
-          <div class="probability">
-            <div class="probcontainer">
-              <div class="Probability Text">
-                <h3>How to Solve</h3>
+              <div class="math-container Npeople">
+                <h4>How to Solve with <span id=bdaynum>N</span> People</h4>
+                <div class="subheadingm">1 - P(No one shares a birthday)</div> 
                 <div id="tb1">
                   Probability that at least two in the room share a birthday
                 </div>
                 <div id="pb1">
-                  Percentage likelihood that at least two in the room share a birthday. 
+                  Likelihood that at least two share a birthday. 
                 </div>
-
-
               </div>
-
-
             </div>
-          </div>
+          
 
         </div>
+      </div>
 
     
 </div>
 </div>
 </div>
 </body>
-<script src="../probability.js" ></script>
+<script src="../javascript/probability.js" ></script>
 </html>

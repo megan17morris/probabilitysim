@@ -104,7 +104,7 @@ function birthdayprob(num){
       }
   }
   pf = 1 - p1; 
-  pf=(pf*100).toFixed(8) + "%";
+  pf=(pf*100).toFixed(3) + "%";
   return pf;
 }
 function birthdaytext(num){
@@ -133,9 +133,7 @@ function birthdaytext(num){
   return btext;
 }
 
-function changebirthday(){
 
-}
 //Birthday Slider
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
@@ -144,6 +142,7 @@ output.value = slider.value;
 
 document.getElementById("tb1").innerHTML= birthdaytext(10);
 slider.oninput = function() {
+  document.getElementById("bdaynum").innerHTML = this.value;
   output.value = this.value;
   document.getElementById("tb1").innerHTML= birthdaytext(this.value);
   document.getElementById("pb1").innerHTML= birthdayprob(this.value);
@@ -151,6 +150,7 @@ slider.oninput = function() {
 }
 output.oninput=function(){
   slider.value=this.value;
+  document.getElementById("bdaynum").innerHTML = this.value;
   document.getElementById("tb1").innerHTML= birthdaytext(this.value);
   document.getElementById("pb1").innerHTML= birthdayprob(this.value);
 }

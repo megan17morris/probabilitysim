@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Target Problem</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../styles1.css">
+  <link rel="stylesheet" href="../target.css">
+  <script src="https://kit.fontawesome.com/7e394594e8.js" crossorigin="anonymous"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" type="image/x-icon" href="../pic/dice.png">
+  
+</head>
+<body>
+  <nav class="sticky-top navbar navbar-expand-lg bg-light ">
+    <div class ="container-fluid">
+      <!--Check about navbar brand-->
+      <a class="navbar-brand" href="../index.html"><img src="../pic/dice.png" height="40px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="montyhall2.html">Monty Hall</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="birthday2.html">Birthday Problem </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="letters2.html">Scrambled Letters</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="target.html">Target Practice</a>
+          </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <!--Side Bar.
+  I want the sidebar to be collapsable with only a person icon. When clicked a 
+  page will come out that will tell about me. -->
+  
+  <div id="allcontent">
+    <div id="mySidebar" class="sidebar">
+      <div class="siderow">
+        <button id ="openbtn2" class=" closebutton"  value = "0" onclick="OCNav();"><i class="fa fa-close"></i></button>  
+      <h3 class="sidecontent">Megan Morris</h3>
+    </div>
+      <img id="authorpic" src="../pic/Headshot1.jpg" alt="A picture of Megan" width = "150" height="auto">
+      <div class="sidetext">
+      <p> Hello! I'm Megan, and this probability simulator is my final project
+        for CS50. 
+        I graduated with my Bachelor's degree in Applied Mathematics and French from
+        UC Berkeley and I am currently using my free time to teach myself programming
+        and computer science. 
+        
+        I am passionate about learning and I am always looking for new collaborations
+        and projects to work on to keep developing my programming skills!
+       </p>
+    </div>
+    <div class="row row-cols-auto justify-content-center">
+     <div class=""><a class= "iconbox  " href="https://github.com/magenta1585"> <img class=  "icon" src="../pic/github-mark-white.png" alt="githublogo" width="30 px" height="30px"> </a> </div>
+     <div class=""><a class="iconbox "  href= "https://www.linkedin.com/in/megan-morris-7aa4711a3/" ><img class= "icon" src="../pic/In-White.png" alt="LinkedIn logo" width="30 px" height="30px"> </a></div>
+     <div class=""><a class= "iconbox " href= "csresume23.pdf"> <i class=" icon fa-solid fa-file fa-2xl"></i> </a></div>
+    </div>
+  </div> 
+  
+  <div id="main" class=" main">
+    <button id ="openbtn1" class="openbtn"  value = "0" onclick="OCNav()"><i class="fa-solid fa-user"></i> &nbsp About Me</button>  
+    <div class=" content">
+      <h1 style="margin-top: 15px">Target Practice: Estimating the value of Pi</h1>
+      <p>
+         \(\pi\) or "pi" is a mathematical constant which is approximately equal to 3.14159. This number is an irrational number whose decimal representation never ends or enters into a repeating pattern.
+         This value is used regularly in formulae within math and physics, most commonly, \(\pi\) appears when we are trying to calculate the circumference and area of a circle.
+         The circumference of a circle is equal to \(2\pi r\) and the area of a circle is equal to \(\pi r^2\). In this lesson, we will use this last formula to help us estimate \(\pi\).
+       </p>
+
+      <hr>
+      
+    <div class="flex-container">
+      <div class="targetcontainer targetcontainer1  containers text-center">
+        <div class="flex1">
+        <p class="problemintro pi1">
+        Constructing our Dartboard
+      </p>
+      
+      <ul class="flex-container wrap">
+        
+        <li class="flex-item fi1"><div class="img-container"><img class="diagram" height="300px" src="../pic/circleinsquare1.png"></div></li>
+        <li class="flex-item fi1"><div class= "explanation"><h4 class="exph4">
+          Look at This Image</h4> What do you see? This is the
+           image of a circle inscribed in a square. The circle touches
+            the square at exactly 4 points and each of these points are
+             the midpoint of one side of the square. The radius of the circle is 5 inches. How long is each side of the square? 
+            <h4 class="exph4">Finding the Ratio of Areas</h4>
+            The area of a square is equal to the square of one of its sides. In this case, the square has an area of 25 in<sup>2</sup>.
+            To find the area of a circle, we will use our formula \(\pi r^2\), which for our diagram is equal to 100\(\pi\) in<sup>2</sup>.
+            <p>This means, for our diagram, the ratio of the circle to the square is equal to \(\frac{25}{100\pi^2}\)</p>
+          </div></li>
+          
+      </ul>
+    </div>
+      </div>
+
+      <div class="targetcontainer targetcontainer2 containers text-center">
+        <div class="flex1">
+        <p class="problemintro pi1">
+          Applying Area to Probability
+      </p>
+      <ul class="flex-container wrap">
+    
+        <li class="flex-item fi2"><div class="img-container"><div class="overlaycontainer"><div class="highlightsquare">
+          <span class="highlighttext">Area of Square: 100 in<sup>2</sup></span>
+        </div> <div class="highlightcircle"> <span class="highlighttext">Area of Circle: 25\(\pi\) in<sup>2</sup></span></div>
+          <img class="diagram" height="300px" src="../pic/circleinsquare1.png"></div></div></li>
+        <li class="flex-item fi2"><div class=explanation><h4 class="exph4">
+          Area Ratios</h4> As we saw in the previous explanation, we can find the area of the circle and the area of the square.
+          If you don't remember these values, hover over the inner circle or outer circle to check. The ratio of the inside circle to the square is 
+          \(\frac{25}{100\pi^2}\).
+          <h4 class="exph4">Applied to Probability</h4>
+          Imagine you threw a dart at this square, but like me, you have zero ability to aim and your dart is going to end up in a completely random point on 
+          the square.
+          <p> What is the probability that the dart ends up in the circle? Well, that is equal to this same ratio of the circle to the square, \(\frac{25}{100\pi^2}\).
+          </p><p>Knowing this, lets try to estimate the value of Pi based on the number of darts in the circle. Since my dart throws are random, the number of darts that land in the circle divided by 
+          the total number of darts thrown should be equal to\(\frac{25}{100\pi^2}\). In other words: </p>
+
+          <p>$$\frac{\textrm{Darts in the circle}}{\textrm{Total Darts}} = \frac{25\pi}{100}$$</p>
+          <p>Rearranging we find: </p>
+          <p>$$\pi = \frac{100}{25} \cdot \frac{\textrm{Darts in the circle}}{Total Darts} $$</p>
+            
+          </div></li>
+        
+      </ul>
+    </div>
+      </div>
+      <div class="targetcontainer targetcontainer3  containers text-center">
+        <div class="flex1">
+        <p class="problemintro pi1">
+        The Search for Pi
+      </p>
+      
+      <ul class="flex-container wrap">
+        
+        <li class="flex-item fi3"><div class="img-container">
+          <div onclick="addpoints(1)" class="chartcontainer" style="border: 1px green dashed;height: 450px; width: 450px">
+            <div class="dartimgcont">
+            <img class="dartimg" id="dartimg" src="" height="auto" width="400px">
+            </div>
+            <canvas id="myChart1"></canvas>
+          </div>
+    </li>
+        <li class="flex-item fi3"><div class= "explanation"><h4 class="exph4">
+          <div id="test1"></div>
+          <div class="container tcontainer">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Number of Points in Circle:</th>
+                <td id="pointsin">0</td>
+              </tr>
+              <tr>
+                <th>Total Number of Points:</th>
+                <td id="totalpoints">0</td>
+              </tr>
+              <tr>
+                <th>Percentage of Points in Circle:</th>
+                <td id="pointspercent">0%</td>
+              </tr>
+              <tr>
+                <th>Pi Estimate:</th>
+                <td id="piestimate">3.14</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--The onkeypress function prevents the user from typing a negative sign or a decimal-->
+  <input onkeyup="pointspan()" id=pointinput name="num" type="number"min="1" step="1" max="1000" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+  title="Numbers only">
+<button onclick="addpointsbtn()" type="button" class="btn btn-primary"> Add <span id="pointspan">1</span> Point<span id="adds"></span></button>
+<button onclick="cleargraph()" type="button" class="btn btn-primary"> Clear</button>
+
+
+          </div></li>
+          
+      </ul>
+    </div>
+      </div>
+    </div>
+    </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    <script src="../javascript/probability.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../javascript/pichart.js"></script>
+    </body>
+    

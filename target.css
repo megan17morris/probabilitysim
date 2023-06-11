@@ -1,0 +1,64 @@
+.header{
+    font-size: 100px;
+    color:orangered;
+    background-color: beige;
+    padding: 30px;
+    margin-top: 20px;
+    border: 2px black solid;
+}
+p{
+    font-size:xx-large ;
+    text-align: center;
+}
+.chartcontainer{ padding: 30px;
+    position: relative;
+}
+canvas{
+    background-image:url("../pic/circle1.png");
+    background-size: 97% 97%;
+    background-repeat: no-repeat;
+    background-position: 7px 3px;
+}
+.dartimgcont{
+    position: absolute;
+ 
+}
+.dartimg{
+    margin-left:25px;
+    margin-top: -20px;
+}
+.tcontainer{
+    width: 80%;
+   
+}
+th{
+    font-size: small;
+}
+
+.chartcontainer{
+    position: relative;
+    margin: auto;
+ 
+  }
+  #myChart1{
+    position: absolute;
+    object-fit: contain;
+    z-index: 0;
+    max-width: 95%;
+  }
+.dartimgcont{
+    position: absolute;
+    z-index: 2;
+}
+
+/*TO make rows wrap the way I want  */
+
+
+.mybox{
+    background-color: aqua;
+    height: 40px;
+    width: 30px;
+    margin:30px 10px;
+    text-align: center;
+   
+}
