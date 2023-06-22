@@ -690,7 +690,7 @@ input::-webkit-inner-spin-button {
     align-self:start;
   }
 
-  @media screen and (min-width:850px) {
+  @media screen and (min-width:903px) {
     .flex-container { flex-wrap: wrap;  }
     .fi1:nth-child(1){
         flex-basis:30%;

@@ -38,7 +38,7 @@ th{
 .chartcontainer{
     position: relative;
     margin: auto;
- 
+
   }
   #myChart1{
     position: absolute;
@@ -61,4 +61,14 @@ th{
     margin:30px 10px;
     text-align: center;
    
+}
+th{
+    font-size: large;
+    text-align: left;
+}
+.exp4{
+    padding-top: 2%;
+}
+.expp{
+    padding-top: 2%;
 }

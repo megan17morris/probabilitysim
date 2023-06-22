@@ -100,7 +100,7 @@ for (let i = 0; i < number; i++){
 
 
 //myChart1.data.datasets[0].data[0]//
-document.getElementById("test1").innerHTML=distance;
+/*document.getElementById("test1").innerHTML=distance;*/
 document.getElementById("pointsin").innerHTML = incircle;
 document.getElementById("totalpoints").innerHTML=totalpoints;
 document.getElementById("pointspercent").innerHTML= (incircle/totalpoints * 100).toFixed(2) + "%";
