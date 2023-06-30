@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/*Scrambled letter specific style*/
+/* The number that is underlined */
+.numunderline{
+    font-size: xx-large;
+    
+}
+/*The text under the underlined number*/
+.numtext{
+    /*border: 1px green dashed;*/
+    padding: 0 15%;}
+
+/*Multiplication sign*/
+.mult{
+    font-size: xx-large;
+}
+.thiscontainer{
+    display: flex;
+}
+.math-container1{
+    width: 90% !important;
+}
+
+.desktd{
+    border: 2px black solid;
+}
+.list {
+	width: 100%;
+	max-width: 768px;
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	margin-top: 25px;
+}
+
+.list .item {
+	padding: 15px;
+	border: 1px solid #CCC;
+}
+.list .item:last-of-type {
+	border-bottom: none;
+}
+.list .item:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.pagenumbers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.pagenumbers button {
+	width: 50px;
+	height: 50px;
+
+	appearance: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+
+	background-color: #44AAEE;
+
+	margin: 5px;
+	transition: 0.4s;
+
+	color: #FFF;
+	font-size: 18px;
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pagenumbers button:hover {
+	background-color: #44EEAA;
+}
+
+.pagenumbers button.active {
+	background-color: #44EEAA;
+	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+}

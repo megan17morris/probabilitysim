@@ -513,8 +513,7 @@ input::-webkit-inner-spin-button {
     font-size: medium;
     align-items: center;
     padding: 8px;
-    border-radius: 10px;
-    
+    border-radius: 10px;  
   }
   .Npeople{
     margin-top: 15px;
@@ -551,7 +550,9 @@ input::-webkit-inner-spin-button {
   }
 
   
-
+.flex-container1{
+  border: violet 1px dotted;
+}
   .flex-container {
     flex-grow:1;
     padding: 0;
@@ -570,7 +571,7 @@ input::-webkit-inner-spin-button {
   .flex1{
     display:flex;
     flex-direction:column;
-    height: 100%;
+    
     
   }
   .nowrap  { 
@@ -589,9 +590,10 @@ input::-webkit-inner-spin-button {
     margin: 0px;
   }
   .img-container{
-    border: 2px solid red;
     position: relative;
     align-self: center;
+    padding-top: 25px;
+    padding-bottom: 40px;
   }
   .overlaycontainer{
     position: relative;
@@ -641,7 +643,6 @@ input::-webkit-inner-spin-button {
     position:absolute;
     height:100%;
     width:100%;
-    
     z-index: 50;
     border-radius: 50%;
     opacity:0;
@@ -662,16 +663,15 @@ input::-webkit-inner-spin-button {
   .explanation{
     padding: 0 20px;
     margin:0;
+    font-size: 16px;
   }
   .explanation p{
     font-size:17px;
     margin:0;
   }
   .flex-container > li{
-    
     display: flex;
     flex-direction: column;
-   
     position: relative;
   }
 .flex-container{flex-wrap: wrap;}
@@ -684,7 +684,6 @@ input::-webkit-inner-spin-button {
     max-width:100%;
   }
   .flex-item{
-    border: 3px solid green;
     flex-grow:0;
     flex-shrink: 0;
     align-self:start;

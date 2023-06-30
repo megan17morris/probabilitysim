@@ -1,17 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Monty Hall</title>
+  <title>The Birthday Problem</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../styles1.css">
+  <link rel="stylesheet" href="../letters.css">
   <script src="https://kit.fontawesome.com/7e394594e8.js" crossorigin="anonymous"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" type="image/x-icon" href="../pic/dice.png">
   
 </head>
-
 <body>
-    <h1 style="text-align:center; color: purple; background-color: aliceblue;"> Hello!</h1>
-    <a href="../index2.html"><img src="../pic/bdayboy.png"> </a>
+  <nav class="sticky-top navbar navbar-expand-lg bg-light ">
+    <div class ="container-fluid">
+      <!--Check about navbar brand-->
+      <a class="navbar-brand" href="../index.html"><img src="../pic/dice.png" height="40px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="montyhall2.html">Monty Hall</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="birthday2.html">Birthday Problem </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="letters2.html">Letter Mix Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="target.html">Target Practice</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <!--Side Bar.
+  I want the sidebar to be collapsable with only a person icon. When clicked a 
+  page will come out that will tell about me. -->
+  
+  <div id="allcontent">
+    <div id="mySidebar" class="sidebar">
+      <div class="siderow">
+        <button id ="openbtn2" class=" closebutton"  value = "0" onclick="OCNavre();"><i class="fa fa-close"></i></button>  
+      <h3 class="sidecontent">Megan Morris</h3>
+    </div>
+      <img id="authorpic" src="../pic/Headshot1.jpg" alt="A picture of Megan" width = "150" height="auto">
+      <div class="sidetext">
+      <p> Hello! I'm Megan, and this probability simulator is my final project
+        for CS50. 
+        I graduated with my Bachelor's degree in Applied Mathematics and French from
+        UC Berkeley and I am currently using my free time to teach myself programming
+        and computer science. 
+        
+        I am passionate about learning and I am always looking for new collaborations
+        and projects to work on to keep developing my programming skills!
+       </p>
+    </div>
+    <div class="row row-cols-auto justify-content-center">
+     <div class=""><a class= "iconbox  " href="https://github.com/magenta1585"> <img class=  "icon" src="../pic/github-mark-white.png" alt="githublogo" width="30 px" height="30px"> </a> </div>
+     <div class=""><a class="iconbox "  href= "https://www.linkedin.com/in/megan-morris-7aa4711a3/" ><img class= "icon" src="../pic/In-White.png" alt="LinkedIn logo" width="30 px" height="30px"> </a></div>
+     <div class=""><a class= "iconbox " href= "csresume23.pdf"> <i class=" icon fa-solid fa-file fa-2xl"></i> </a></div>
+    </div>
+  </div> 
+  
+  <div id="main" class=" main">
+    <button id ="openbtn1" class="openbtn"  value = "0" onclick="OCNav()"><i class="fa-solid fa-user"></i> &nbsp About Me</button>  
+    <div class=" content">
+      <h1 style="margin-top: 15px">Letter Mix Up</h1>
+      <p>
+       If you are given a word and asked to find how many different ways can you reorder the letters, how would you solve the problem? Would you try to
+       find every combination of letters? Well if there's at least 5 letters in your word, you may have 120 combinations to find and if you had more letters
+       to the word, this number is only going to grow and grow. And I personally would rather not write out every combination. This lesson will walk you through how to solve this kind of problem. 
+       </p>
+
+       <hr>
+
+       <div class="row row1">
+        <div class="problemwalkthrough containers text-center contop">
+          <p class="problemintro">
+          Example
+        </p>
+        
+        <h4 >Words with No Repeating Letters</h4>
+        <div class="instruction"><p> Let's say that we want to find the number of ways we can permute the letters of the word <span>DESK</span>. </p>
+        <p> We can imagine setting down the letters in a line. When we are ready to choose our first letter, we have 4 choices. When we 
+          choose our third letter, we have already used one of the letters so we have 3 options left. When we choose our third letter,
+          there will be 2 letters left to choose. When we set down the last letter, all others will have been used so we will have only one option left.
+          This implies that we will have \(4 *3 * 2 * 1 = 24 \) possible ways of permuting the letters of "DESK".
+          We model this example in the following diagram.
+        </p>
+          
+      </div>
+       
+        <div class="mcontain2">
+        <div class="math-container mcon2">
+          <h4>Ways of ordering the letters of "DESK"</h4>
+          <div>
+            <!--This must be a row of 7 items, 4 text blocks with numbers and then multiplication signs
+            Each text block will have the number underlined and underneath there will be a division with number 
+          explanations-->
+          
+            <div class="expnumunderline">
+              <div class="thiscontainer">
+                <!--Number underline class-->
+                <div class=" numex">
+                  <div class="numunderline">$$\underline{4}$$</div>
+                  <div class="numtext">4 choices for our first letter.</div>
+              </div>
+              <div class=" mult"> $$*$$</div>
+              <div class=" numex">
+                <div class="numunderline">$$\underline{3}$$</div>
+                <div class="numtext">3 choices for our second letter.</div>
+              </div>
+              <div class=" mult"> $$*$$</div>
+              <div class=" numex">
+                <div class="numunderline">$$\underline{2}$$</div>
+                <div class="numtext">2 choices for our third letter.</div>
+              </div>
+              <div class=" mult"> $$*$$</div>
+              <div class=" numex">
+                <div class="numunderline">$$\underline{1}$$</div>
+                <div class="numtext">1 choice for our last letter.</div>
+              </div>
+
+
+
+              </div>
+              </div>
+            </div>
+            </div>
+            <div class="math-container math-container1">
+              <h4> All Orderings of "DESK"</h4>
+              <!--<table id="Desktable" class="table">
+                <tr>
+                  <td class="desktd">1</td>
+                  <td class="desktd">2</td>
+                  <td class="desktd">3</td>
+                  <td class="desktd">4</td>
+                  <td class="desktd">5</td>
+                  <td class="desktd">6</td>
+                </tr>-->
+                <table class="list" id="list"></table>
+                <div class="pagenumbers desk" id="pagination"></div>
+                <div id="desktext" class="itemscount"></div>
+      
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      
+       
+    
+    </div>
+    <div class="problemwalkthrough containers text-center contop">
+      <p class="problemintro">
+      Example
+    </p>
+    
+    <h4 >Words With Repeating Letters</h4>
+    <div class="instruction"><p> Now we will consider the situation when we want to rearrange letters of a 
+      word, but this time the word has the same letter or letters multiple times contained within it. 
+      Let's use the word MOOD as an example. 
+    </p>
+    <p>
+      Looking at the word MOOD, we see that the word has 1 M, 2 O's and 1 D. If we try to swap the two O's
+      in the center of the word, we would just get the same word. To control for these repeating letters,
+      we will follow the same process as the last example, but this time, we will divide our entire 
+      answer by 2 as there are 2 O's in MOOD. 
+    </p>
+  </div>
+    <hr class="hr1">
+    <div class="mcontain2">
+      <div class="math-container mcon2">
+        <h4>Ways of ordering the letters of "MOOD"</h4>
+        <div>
+          <!--This must be a row of 7 items, 4 text blocks with numbers and then multiplication signs
+          Each text block will have the number underlined and underneath there will be a division with number 
+        explanations-->
+        
+          <div class="expnumunderline">
+            <div class="thiscontainer">
+              <!--Number underline class-->
+              <div class=" numex">
+                <div class="numunderline">$$\underline{4}$$</div>
+                <div class="numtext">4 choices for our first letter.</div>
+            </div>
+            <div class=" mult"> $$*$$</div>
+            <div class=" numex">
+              <div class="numunderline">$$\underline{3}$$</div>
+              <div class="numtext">3 choices for our second letter.</div>
+            </div>
+            <div class=" mult"> $$*$$</div>
+            <div class=" numex">
+              <div class="numunderline">$$\underline{2}$$</div>
+              <div class="numtext">2 choices for our third letter.</div>
+            </div>
+            <div class=" mult"> $$*$$</div>
+            <div class=" numex">
+              <div class="numunderline">$$\underline{1}$$</div>
+              <div class="numtext">1 choice for our last letter.</div>
+            </div>
+            <div class=" mult"> $$\div$$</div>
+            <div class=" numex">
+              <div class="numunderline">$$\underline{2}$$</div>
+              <div class="numtext">Divide by 2 because we have 2 O's </div>
+            </div>
+
+
+
+            </div>
+            </div>
+          </div>
+          </div>
+          <div class="math-container math-container1">
+            <h4> All Orderings of "MOOD"</h4>
+            <!--<table id="Desktable" class="table">
+              <tr>
+                <td class="desktd">1</td>
+                <td class="desktd">2</td>
+                <td class="desktd">3</td>
+                <td class="desktd">4</td>
+                <td class="desktd">5</td>
+                <td class="desktd">6</td>
+              </tr>-->
+              <table class="list" id="moodlist"></table>
+              <div class="pagenumbers" id="moodpages"></div>
+              <div id="moodtext" class="itemscount"></div>
+    
+          </div>
+
+</div>
+
+
+    </div>
+    </div>
+    </div>
+  <script src="../javascript/paginationtables.js"></script>
+  <script src="../javascript/scramble.js"></script>
 </body>
+</html>

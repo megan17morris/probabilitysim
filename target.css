@@ -21,7 +21,6 @@ canvas{
 }
 .dartimgcont{
     position: absolute;
- 
 }
 .dartimg{
     margin-left:25px;
@@ -29,7 +28,6 @@ canvas{
 }
 .tcontainer{
     width: 80%;
-   
 }
 th{
     font-size: small;
@@ -68,6 +66,7 @@ th{
 }
 .exp4{
     padding-top: 2%;
+    font-size: 16px;
 }
 .expp{
     padding-top: 2%;
