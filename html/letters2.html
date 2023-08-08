@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>The Birthday Problem</title>
+  <title>Letter Mix Up</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -143,15 +143,7 @@
             </div>
             <div class="math-container math-container1">
               <h4> All Orderings of "DESK"</h4>
-              <!--<table id="Desktable" class="table">
-                <tr>
-                  <td class="desktd">1</td>
-                  <td class="desktd">2</td>
-                  <td class="desktd">3</td>
-                  <td class="desktd">4</td>
-                  <td class="desktd">5</td>
-                  <td class="desktd">6</td>
-                </tr>-->
+              
                 <table class="list" id="list"></table>
                 <div class="pagenumbers desk" id="pagination"></div>
                 <div id="desktext" class="itemscount"></div>
@@ -216,7 +208,7 @@
             <div class=" mult"> $$\div$$</div>
             <div class=" numex">
               <div class="numunderline">$$\underline{2}$$</div>
-              <div class="numtext">Divide by 2 because we have 2 O's </div>
+              <div class="numtext">Divide by 2 since we have 2 O's </div>
             </div>
 
 
@@ -227,22 +219,62 @@
           </div>
           <div class="math-container math-container1">
             <h4> All Orderings of "MOOD"</h4>
-            <!--<table id="Desktable" class="table">
-              <tr>
-                <td class="desktd">1</td>
-                <td class="desktd">2</td>
-                <td class="desktd">3</td>
-                <td class="desktd">4</td>
-                <td class="desktd">5</td>
-                <td class="desktd">6</td>
-              </tr>-->
+           
               <table class="list" id="moodlist"></table>
-              <div class="pagenumbers" id="moodpages"></div>
+              <div class="pagenumbers mood" id="moodpages"></div>
               <div id="moodtext" class="itemscount"></div>
     
           </div>
 
+</div> 
 </div>
+
+
+<div class="problemwalkthrough containers text-center contop">
+  <p class="problemintro">
+  Your Turn!
+</p>
+
+<h4 >The General Example</h4>
+<div class="instruction"><p> We have seen a few examples now so let's investigate the general formula.
+</p>
+<p>
+  As we did in the first example, we will always take the factorial of the number of letters in the word. 
+  We can then sort the word into groups of letters. For example, the word Bumblebee contains 2 B's, 1 U, 1 M, 1 L and 3 E's. 
+  We will then divide the original factorial by the product of the factorials of the number of letters in each group.
+  If this is hard to understand, please examine the formula below.
+</p>
+<p>
+  In the formula below, N represents the total number of letters in the word. n<sub>A</sub> represents the numbers of
+  A's in the word, n<sub>B</sub> represents the number of B's in the word and so on. Enter in your own word to see how
+  many combinations of letters there
+</p>
+</div>
+<hr class="hr1">
+<div class="mcontain2">
+  <div class="math-container mcon2">
+    <h4>General Formula for Ordering Letters</h4>
+    <div class="formula">
+      $$\frac{N!}{n_A!\cdot n_B! \cdot \ldots n_Z!} $$
+      </div>
+      <div>N: The number of letters in the word</div>
+      <div>n<sub>A</sub>: The number of A's in the word</div>
+      </div>
+      <div class="math-container math-container1">
+        <h5>Enter in your Word</h5>
+        <input type="text" id="enterword" name="enterword">
+        <button onclick="personalword()" id="enterbutton" type="button" class=" btn gamebuttons ">Combinations!</button>
+      </div>
+      <div class="math-container math-container1">
+        <h4> All Orderings of "<span id="enteredword">Word</span>"</h4>
+        <table class="list" id="wordlist"></table>
+        <div class="pagenumbers word" id="wordpages"></div>
+        <div id="wordtext" class="itemscount"></div>
+          
+      </div>
+
+</div> 
+
 
 
     </div>

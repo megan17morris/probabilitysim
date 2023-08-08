@@ -74,15 +74,17 @@ function SetupPagination (items, wrapper,columns_per_page, rows_per_page, pageel
 function PaginationButton (page, items, pageelement) {
 	let button = document.createElement('button');
 	button.innerText = page;
-	let idtext = "Button" + page;
+	let idtext = "Button" + pageelement.name+page;
 	button.setAttribute('id', idtext);
 	if (pageelement.current_page == page) button.classList.add('active');
 
 	button.addEventListener('click', function () {
 		pageelement.current_page = page;
 		DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page);
-		let current_btn = document.querySelector('.pagenumbers button.active');
+		nameString= "."+pageelement.name;
+		let current_btn = document.querySelector(nameString+'.pagenumbers button.active');
 		current_btn.classList.remove('active');
+		// Something about the next line works correctly for Desk but isn't reading correctly
 		button.classList.add('active');
 	});
 
@@ -95,10 +97,11 @@ function OpenButton(items, pageelement){
 	openbtn.addEventListener("click", function(){
 		if (pageelement.current_page>1){
 			pageelement.current_page = pageelement.current_page-1
-			DisplayList(items, list_element, columns, rows, pageelement.current_page);
-			let current_btn = document.querySelector('.pagenumbers button.active');
+			DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page);
+			nameString= "."+pageelement.name;
+			let current_btn = document.querySelector(nameString+'.pagenumbers button.active');
 			current_btn.classList.remove('active');
-			let id_text = "#Button" + pageelement.current_page;
+			let id_text = "#Button" + pageelement.name+pageelement.current_page;
 			let new_btn = document.querySelector(id_text);
 			new_btn.classList.add('active');
 
@@ -119,10 +122,11 @@ function CloseButton(items, page_count, pageelement){
 	closedbtn.addEventListener("click", function(){
 		if (pageelement.current_page < page_count){
 			pageelement.current_page = pageelement.current_page+1;
-			DisplayList(items, list_element, columns, rows, pageelement.current_page);
-			let current_btn = document.querySelector('.pagenumbers button.active');
+			DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page);
+			nameString= "."+pageelement.name;
+			let current_btn = document.querySelector(nameString+'.pagenumbers button.active');
 			current_btn.classList.remove('active');
-			let id_text = "#Button" + pageelement.current_page;
+			let id_text = "#Button" + pageelement.name+ pageelement.current_page;
 			let new_btn = document.querySelector(id_text);
 			new_btn.classList.add('active');
 
@@ -162,19 +166,18 @@ function permute(string) {
  for (permutation of permutations){
    console.log(permutation)} //Use the output method of your choice
 
-const list_element = document.getElementById('list');
-const pagination_element = document.getElementById('pagination');
 let current_page = 1;
 let rows = 3;
 let columns = 2;
 
-let desk ={current_page:1, list_element : document.getElementById("list"),
+let desk ={name: "desk", current_page:1, list_element : document.getElementById("list"),
  pagination_element: document.getElementById("pagination")};
 
-let mood ={current_page:1, list_element: document.getElementById("moodlist"),
+let mood ={name: "mood",current_page:1, list_element: document.getElementById("moodlist"),
  pagination_element: document.getElementById("moodpages")};
 
-let personal = {current_page:1};
+let personal = {name:"word", current_page: 1, list_element: document.getElementById("wordlist"),
+pagination_element: document.getElementById("wordpages")};
 
 DisplayList(permute("DESK"), desk.list_element, columns, rows, current_page);
 SetupPagination(permute("DESK"), desk.pagination_element, columns, rows, desk);
@@ -182,3 +185,11 @@ SetupPagination(permute("DESK"), desk.pagination_element, columns, rows, desk);
 moodpermute= permute("MOOD");
 DisplayList(moodpermute, mood.list_element, 2, 3, 1);
 SetupPagination(moodpermute, mood.pagination_element, 2 , 3, mood);
+
+DisplayList(permute("WORD"), personal.list_element,2, 3, 1);
+SetupPagination(permute("WORD"),personal.pagination_element, 2, 3, personal);
+function personalword(){
+	let myword = document.getElementById("enterword").value.toUpperCase();
+	DisplayList(permute(myword), personal.list_element,3,8,1);
+	SetupPagination(permute(myword), personal.pagination_element,3,8,personal);
+}
