@@ -231,6 +231,7 @@
 
 
 <div class="problemwalkthrough containers text-center contop">
+
   <p class="problemintro">
   Your Turn!
 </p>
@@ -247,12 +248,26 @@
 <p>
   In the formula below, N represents the total number of letters in the word. n<sub>A</sub> represents the numbers of
   A's in the word, n<sub>B</sub> represents the number of B's in the word and so on. Enter in your own word to see how
-  many combinations of letters there
+  many combinations of letters there are. 
+</p>
+<p>
+  The simulator will not accept any phrases with spaces, and will reject non-alphabetical letters. 
+  There is also a limit of 20 letters per word but you will only see a maximum of 100 different combinations.
 </p>
 </div>
 <hr class="hr1">
 <div class="mcontain2">
-  <div class="math-container mcon2">
+  <div class="math-container math-container1">
+    <h5>Enter in your Word</h5>
+    <input type="text" id="enterword" name="enterword">
+    <button onclick="personalword()" id="enterbutton" type="button" class=" btn gamebuttons ">Combinations!</button>
+    <div class="alert" id="letteralert">
+      <span class="closedbtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      Please only enter words that contain alphabetical letters. You can only enter up to 20 letters.
+    </div>
+  </div>
+  <div class="math-container mcon2 ">
+    <div id="generalformulatext">
     <h4>General Formula for Ordering Letters</h4>
     <div class="formula">
       $$\frac{N!}{n_A!\cdot n_B! \cdot \ldots n_Z!} $$
@@ -260,12 +275,21 @@
       <div>N: The number of letters in the word</div>
       <div>n<sub>A</sub>: The number of A's in the word</div>
       </div>
+      <div id="enteredformulatext">
+        
+        <span class="closedbtn1 " onclick="this.parentElement.style.color='blue';">&lsaquo;</span> 
+        <h4>Formula for Ordering the Letters of <span id="enteredword1">Now</span></h4>
+        <div class="formula" id="enteredformula">
+          $$\frac{N!}{n_A!\cdot n_B! \cdot \ldots n_Z!} $$
+          </div>
+          
+          </div>
+
+    </div>
+
+
       <div class="math-container math-container1">
-        <h5>Enter in your Word</h5>
-        <input type="text" id="enterword" name="enterword">
-        <button onclick="personalword()" id="enterbutton" type="button" class=" btn gamebuttons ">Combinations!</button>
-      </div>
-      <div class="math-container math-container1">
+        
         <h4> All Orderings of "<span id="enteredword">Word</span>"</h4>
         <table class="list" id="wordlist"></table>
         <div class="pagenumbers word" id="wordpages"></div>
@@ -274,6 +298,7 @@
       </div>
 
 </div> 
+<div id="testtext"></div>
 
 
 

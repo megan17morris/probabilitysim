@@ -94,3 +94,37 @@
 }
 /*does this work
 /*test
+*/
+.alert {
+  margin: 20px auto;
+  background-color: #f44336;
+  color: white;
+  width:70%;
+  position:relative;
+  font-size: smaller;
+  display: none;
+}
+.closedbtn {
+	color: white;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+	float: right;
+	
+  }
+  .closedbtn1 {
+	color: black;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+	float: left;
+	margin-left: 10px;
+	
+  }
+  #enteredformulatext{
+	display: none;
+  }

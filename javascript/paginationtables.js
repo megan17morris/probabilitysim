@@ -27,16 +27,6 @@ function DisplayList (items, wrapper,columns_per_page, rows_per_page, page, page
 	let end = start + rows_per_page * columns_per_page;
 	let paginatedItems = items.slice(start, end);
 	
-
-	/*for (let i = 0; i < paginatedItems.length; i++) {
-		let item = paginatedItems[i];
-
-		let item_element = document.createElement('div');
-		item_element.classList.add('item');
-		item_element.innerText = item;
-		
-		wrapper.appendChild(item_element);
-	}*/
 	for (let r= 0; r < rows_per_page; r++){
 		let rowstart= r * columns_per_page;
 		let rowend = rowstart+ columns_per_page;
@@ -53,7 +43,8 @@ function DisplayList (items, wrapper,columns_per_page, rows_per_page, page, page
 		}
 		wrapper.appendChild(newrow);
 	}
-	pageelement.text_element.innerHTML="hello"
+	pageelement.text_element.innerHTML= start + " to "+ Math.min(end, items.length) +" of "+ 
+	permutecount(pageelement.word) + " items"
 
 }
 
@@ -158,6 +149,9 @@ function permute(string) {
         console.log("Subpermutation: "+ subPermutation);
         
         permutations.push(char + subPermutation)
+		if (permutations.length >99){
+			return permutations;
+		}
         //console.log("char+subpermutation: " +char + subPermutation);
     }}
     return permutations;
@@ -168,13 +162,13 @@ let current_page = 1;
 let rows = 3;
 let columns = 2;
 
-let desk ={name: "desk", current_page:1, list_element : document.getElementById("list"),
+let desk ={name: "desk", word:"desk", current_page:1, list_element : document.getElementById("list"),
  pagination_element: document.getElementById("pagination"), text_element: document.getElementById("desktext")};
 
-let mood ={name: "mood",current_page:1, list_element: document.getElementById("moodlist"),
+let mood ={name: "mood", word: "mood",current_page:1, list_element: document.getElementById("moodlist"),
  pagination_element: document.getElementById("moodpages"), text_element: document.getElementById("moodtext")};
 
-let personal = {name:"word", current_page: 1, list_element: document.getElementById("wordlist"),
+let personal = {name:"word", word:"word", current_page: 1, list_element: document.getElementById("wordlist"),
 pagination_element: document.getElementById("wordpages"), text_element: document.getElementById("wordtext")};
 
 DisplayList(permute("DESK"), desk.list_element, columns, rows, current_page, desk);
@@ -186,9 +180,26 @@ SetupPagination(moodpermute, mood.pagination_element, columns , rows, mood);
 
 DisplayList(permute("WORD"), personal.list_element,columns, rows, 1, personal);
 SetupPagination(permute("WORD"),personal.pagination_element, columns, rows, personal);
+
+
 function personalword(){
-	let myword = document.getElementById("enterword").value.toUpperCase();
-	document.getElementById("enteredword").innerHTML = myword;
+	//Put everything as capital letters and trim spaces
+	let myword = document.getElementById("enterword").value.toUpperCase().trim();
+	 if(!containsOnlyLetters(myword) || myword.length> 20){
+	 	document.getElementById("letteralert").style.display="block";
+		return
+	}
+	document.getElementById("enteredword").innerHTML=myword;
+	document.getElementById("enteredword1").innerHTML = myword;
+	personal.word = myword;
+	//document.getElementById("enteredformula").innerHTML= 
+	
+	document.getElementById("enteredformula").innerHTML=formulatextgenerator(myword);
+	document.getElementById("generalformulatext").style.display="none";
+	document.getElementById("enteredformulatext").style.display="block";
+	MathJax.typeset();
+	//Now need to generate the formula text with the new formula
+	
 	DisplayList(permute(myword), personal.list_element,columns,rows,1, personal);
 	SetupPagination(permute(myword), personal.pagination_element,columns,rows,personal);
 }
@@ -216,10 +227,35 @@ function permutecount(word){
 			}
 		}
 		let total = numerator/denominator;
-		console.log("The permute count is:")
-		console.log(total)
 		return total;
 }
+function formulatextgenerator(word){
+	let myword = word.toUpperCase().trim();
+	const alphabetDictionary = {};
+		
+		// Loop through the alphabet characters and set the values to 0
+		for (let i = 65; i <= 90; i++) {
+		const letter = String.fromCharCode(i);
+		alphabetDictionary[letter] = 0;
+		}
+	
+		// Output the generated dictionary
+		console.log(alphabetDictionary);
+		for (let i=0; i < myword.length; i++){
+			alphabetDictionary[myword[i]]++;
+		}
+	let numeratortext = word.length + "!";
+	let denominatorarray=[];
+	for (key in alphabetDictionary){
+		if (alphabetDictionary[key]> 0){
+			denominatorarray.push(alphabetDictionary[key]+"_"+ key+"!");
+		}
+	}
+	let denominatortext=denominatorarray.join("\\cdot");
+	let newtext="$$\\frac{"+numeratortext+"}" +"{"+denominatortext+"}"+"$$";
+	return newtext;
+}
+
 function factorial(number){
 	let total = 1;
 	for (let i = 1; i<=number; i++){
@@ -228,4 +264,10 @@ function factorial(number){
 	return total
 }
 
-permutecount("none")
+
+
+
+function containsOnlyLetters(str) {
+  return /^[A-Za-z]+$/.test(str);
+}
+
