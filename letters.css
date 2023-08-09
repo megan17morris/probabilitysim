@@ -85,5 +85,12 @@
 	background-color: #44EEAA;
 	box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
+#enterword{
+	border-radius: 15px;
+	padding:5px 15px;
+}
+#enterword:focus{
+	outline-style:none;
+}
 /*does this work
 /*test

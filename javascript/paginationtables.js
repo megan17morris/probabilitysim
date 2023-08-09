@@ -19,7 +19,7 @@
 //     "Item 18"
 // ]
 
-function DisplayList (items, wrapper,columns_per_page, rows_per_page, page) {
+function DisplayList (items, wrapper,columns_per_page, rows_per_page, page, pageelement) {
 	wrapper.innerHTML = "";
 	page--;
 
@@ -53,6 +53,8 @@ function DisplayList (items, wrapper,columns_per_page, rows_per_page, page) {
 		}
 		wrapper.appendChild(newrow);
 	}
+	pageelement.text_element.innerHTML="hello"
+
 }
 
 /* Idea: Establish which page element ("DESK", "MOOD", or "Personal") which can each hold their own current page)*/
@@ -80,7 +82,7 @@ function PaginationButton (page, items, pageelement) {
 
 	button.addEventListener('click', function () {
 		pageelement.current_page = page;
-		DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page);
+		DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page, pageelement);
 		nameString= "."+pageelement.name;
 		let current_btn = document.querySelector(nameString+'.pagenumbers button.active');
 		current_btn.classList.remove('active');
@@ -97,7 +99,7 @@ function OpenButton(items, pageelement){
 	openbtn.addEventListener("click", function(){
 		if (pageelement.current_page>1){
 			pageelement.current_page = pageelement.current_page-1
-			DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page);
+			DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page, pageelement);
 			nameString= "."+pageelement.name;
 			let current_btn = document.querySelector(nameString+'.pagenumbers button.active');
 			current_btn.classList.remove('active');
@@ -122,7 +124,7 @@ function CloseButton(items, page_count, pageelement){
 	closedbtn.addEventListener("click", function(){
 		if (pageelement.current_page < page_count){
 			pageelement.current_page = pageelement.current_page+1;
-			DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page);
+			DisplayList(items, pageelement.list_element, columns, rows, pageelement.current_page, pageelement);
 			nameString= "."+pageelement.name;
 			let current_btn = document.querySelector(nameString+'.pagenumbers button.active');
 			current_btn.classList.remove('active');
@@ -144,52 +146,86 @@ function permute(string) {
     var permutations = []; // This array will hold our permutations
     for (var i = 0; i < string.length; i++) {
       var char = string[i];
-      console.log(i+" Character is:" +char);
+      //console.log(i+" Character is:" +char);
   
       // Cause we don't want any duplicates:
       if (string.indexOf(char) != i) // if char was used already
         continue; // skip it this time
   
       var remainingString = string.slice(0, i) + string.slice(i + 1, string.length); //Note: you can concat Strings via '+' in JS
-      console.log(i+ "Remaining String: "+ remainingString)
+      //console.log(i+ "Remaining String: "+ remainingString)
       for (var subPermutation of permute(remainingString)){
         console.log("Subpermutation: "+ subPermutation);
         
         permutations.push(char + subPermutation)
-        console.log("char+subpermutation: " +char + subPermutation);
+        //console.log("char+subpermutation: " +char + subPermutation);
     }}
     return permutations;
   }
 
-  var myString = "xxyz";
- permutations = permute(myString);
- for (permutation of permutations){
-   console.log(permutation)} //Use the output method of your choice
-
+ 
 let current_page = 1;
 let rows = 3;
 let columns = 2;
 
 let desk ={name: "desk", current_page:1, list_element : document.getElementById("list"),
- pagination_element: document.getElementById("pagination")};
+ pagination_element: document.getElementById("pagination"), text_element: document.getElementById("desktext")};
 
 let mood ={name: "mood",current_page:1, list_element: document.getElementById("moodlist"),
- pagination_element: document.getElementById("moodpages")};
+ pagination_element: document.getElementById("moodpages"), text_element: document.getElementById("moodtext")};
 
 let personal = {name:"word", current_page: 1, list_element: document.getElementById("wordlist"),
-pagination_element: document.getElementById("wordpages")};
+pagination_element: document.getElementById("wordpages"), text_element: document.getElementById("wordtext")};
 
-DisplayList(permute("DESK"), desk.list_element, columns, rows, current_page);
+DisplayList(permute("DESK"), desk.list_element, columns, rows, current_page, desk);
 SetupPagination(permute("DESK"), desk.pagination_element, columns, rows, desk);
 
 moodpermute= permute("MOOD");
-DisplayList(moodpermute, mood.list_element, 2, 3, 1);
-SetupPagination(moodpermute, mood.pagination_element, 2 , 3, mood);
+DisplayList(moodpermute, mood.list_element, columns, rows, 1, mood);
+SetupPagination(moodpermute, mood.pagination_element, columns , rows, mood);
 
-DisplayList(permute("WORD"), personal.list_element,2, 3, 1);
-SetupPagination(permute("WORD"),personal.pagination_element, 2, 3, personal);
+DisplayList(permute("WORD"), personal.list_element,columns, rows, 1, personal);
+SetupPagination(permute("WORD"),personal.pagination_element, columns, rows, personal);
 function personalword(){
 	let myword = document.getElementById("enterword").value.toUpperCase();
-	DisplayList(permute(myword), personal.list_element,3,8,1);
-	SetupPagination(permute(myword), personal.pagination_element,3,8,personal);
+	document.getElementById("enteredword").innerHTML = myword;
+	DisplayList(permute(myword), personal.list_element,columns,rows,1, personal);
+	SetupPagination(permute(myword), personal.pagination_element,columns,rows,personal);
 }
+
+function permutecount(word){
+		let myword = word.toUpperCase();
+		const alphabetDictionary = {};
+		
+		// Loop through the alphabet characters and set the values to 0
+		for (let i = 65; i <= 90; i++) {
+		const letter = String.fromCharCode(i);
+		alphabetDictionary[letter] = 0;
+		}
+	
+		// Output the generated dictionary
+		console.log(alphabetDictionary);
+		for (let i=0; i < myword.length; i++){
+			alphabetDictionary[myword[i]]++;
+		}
+		numerator = factorial(myword.length);
+		denominator = 1;
+		for (key in alphabetDictionary){
+			if (alphabetDictionary[key]>1){
+				denominator = denominator * factorial(alphabetDictionary[key])
+			}
+		}
+		let total = numerator/denominator;
+		console.log("The permute count is:")
+		console.log(total)
+		return total;
+}
+function factorial(number){
+	let total = 1;
+	for (let i = 1; i<=number; i++){
+		total = total * i;
+	}
+	return total
+}
+
+permutecount("none")
