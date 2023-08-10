@@ -152,157 +152,155 @@
           </div>
   
         </div>
-      </div>
       
-       
-    
+      <div class="problemwalkthrough containers text-center contop">
+        <p class="problemintro">
+        Example
+      </p>
+      
+      <h4 >Words With Repeating Letters</h4>
+      <div class="instruction"><p> Now we will consider the situation when we want to rearrange letters of a 
+        word, but this time the word has the same letter or letters multiple times contained within it. 
+        Let's use the word MOOD as an example. 
+      </p>
+      <p>
+        Looking at the word MOOD, we see that the word has 1 M, 2 O's and 1 D. If we try to swap the two O's
+        in the center of the word, we would just get the same word. To control for these repeating letters,
+        we will follow the same process as the last example, but this time, we will divide our entire 
+        answer by 2 as there are 2 O's in MOOD. 
+      </p>
     </div>
-    <div class="problemwalkthrough containers text-center contop">
-      <p class="problemintro">
-      Example
-    </p>
-    
-    <h4 >Words With Repeating Letters</h4>
-    <div class="instruction"><p> Now we will consider the situation when we want to rearrange letters of a 
-      word, but this time the word has the same letter or letters multiple times contained within it. 
-      Let's use the word MOOD as an example. 
-    </p>
-    <p>
-      Looking at the word MOOD, we see that the word has 1 M, 2 O's and 1 D. If we try to swap the two O's
-      in the center of the word, we would just get the same word. To control for these repeating letters,
-      we will follow the same process as the last example, but this time, we will divide our entire 
-      answer by 2 as there are 2 O's in MOOD. 
-    </p>
-  </div>
-    <hr class="hr1">
-    <div class="mcontain2">
-      <div class="math-container mcon2">
-        <h4>Ways of ordering the letters of "MOOD"</h4>
-        <div>
-          <!--This must be a row of 7 items, 4 text blocks with numbers and then multiplication signs
-          Each text block will have the number underlined and underneath there will be a division with number 
-        explanations-->
-        
-          <div class="expnumunderline">
-            <div class="thiscontainer">
-              <!--Number underline class-->
+      <hr class="hr1">
+      <div class="mcontain2">
+        <div class="math-container mcon2">
+          <h4>Ways of ordering the letters of "MOOD"</h4>
+          <div>
+            <!--This must be a row of 7 items, 4 text blocks with numbers and then multiplication signs
+            Each text block will have the number underlined and underneath there will be a division with number 
+          explanations-->
+          
+            <div class="expnumunderline">
+              <div class="thiscontainer">
+                <!--Number underline class-->
+                <div class=" numex">
+                  <div class="numunderline">$$\underline{4}$$</div>
+                  <div class="numtext">4 choices for our first letter.</div>
+              </div>
+              <div class=" mult"> $$*$$</div>
               <div class=" numex">
-                <div class="numunderline">$$\underline{4}$$</div>
-                <div class="numtext">4 choices for our first letter.</div>
-            </div>
-            <div class=" mult"> $$*$$</div>
-            <div class=" numex">
-              <div class="numunderline">$$\underline{3}$$</div>
-              <div class="numtext">3 choices for our second letter.</div>
-            </div>
-            <div class=" mult"> $$*$$</div>
-            <div class=" numex">
-              <div class="numunderline">$$\underline{2}$$</div>
-              <div class="numtext">2 choices for our third letter.</div>
-            </div>
-            <div class=" mult"> $$*$$</div>
-            <div class=" numex">
-              <div class="numunderline">$$\underline{1}$$</div>
-              <div class="numtext">1 choice for our last letter.</div>
-            </div>
-            <div class=" mult"> $$\div$$</div>
-            <div class=" numex">
-              <div class="numunderline">$$\underline{2}$$</div>
-              <div class="numtext">Divide by 2 since we have 2 O's </div>
-            </div>
-
-
-
+                <div class="numunderline">$$\underline{3}$$</div>
+                <div class="numtext">3 choices for our second letter.</div>
+              </div>
+              <div class=" mult"> $$*$$</div>
+              <div class=" numex">
+                <div class="numunderline">$$\underline{2}$$</div>
+                <div class="numtext">2 choices for our third letter.</div>
+              </div>
+              <div class=" mult"> $$*$$</div>
+              <div class=" numex">
+                <div class="numunderline">$$\underline{1}$$</div>
+                <div class="numtext">1 choice for our last letter.</div>
+              </div>
+              <div class=" mult"> $$\div$$</div>
+              <div class=" numex">
+                <div class="numunderline">$$\underline{2}$$</div>
+                <div class="numtext">Divide by 2 since we have 2 O's </div>
+              </div>
+  
+  
+  
+              </div>
+              </div>
             </div>
             </div>
-          </div>
-          </div>
-          <div class="math-container math-container1">
-            <h4> All Orderings of "MOOD"</h4>
-           
-              <table class="list" id="moodlist"></table>
-              <div class="pagenumbers mood" id="moodpages"></div>
-              <div id="moodtext" class="itemscount"></div>
-    
-          </div>
-
-</div> 
-</div>
-
-
-<div class="problemwalkthrough containers text-center contop">
-
-  <p class="problemintro">
-  Your Turn!
-</p>
-
-<h4 >The General Example</h4>
-<div class="instruction"><p> We have seen a few examples now so let's investigate the general formula.
-</p>
-<p>
-  As we did in the first example, we will always take the factorial of the number of letters in the word. 
-  We can then sort the word into groups of letters. For example, the word Bumblebee contains 2 B's, 1 U, 1 M, 1 L and 3 E's. 
-  We will then divide the original factorial by the product of the factorials of the number of letters in each group.
-  If this is hard to understand, please examine the formula below.
-</p>
-<p>
-  In the formula below, N represents the total number of letters in the word. n<sub>A</sub> represents the numbers of
-  A's in the word, n<sub>B</sub> represents the number of B's in the word and so on. Enter in your own word to see how
-  many combinations of letters there are. 
-</p>
-<p>
-  The simulator will not accept any phrases with spaces, and will reject non-alphabetical letters. 
-  There is also a limit of 20 letters per word but you will only see a maximum of 100 different combinations.
-</p>
-</div>
-<hr class="hr1">
-<div class="mcontain2">
-  <div class="math-container math-container1">
-    <h5>Enter in your Word</h5>
-    <input type="text" id="enterword" name="enterword">
-    <button onclick="personalword()" id="enterbutton" type="button" class=" btn gamebuttons ">Combinations!</button>
-    <div class="alert" id="letteralert">
-      <span class="closedbtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-      Please only enter words that contain alphabetical letters. You can only enter up to 20 letters.
-    </div>
+            <div class="math-container math-container1">
+              <h4> All Orderings of "MOOD"</h4>
+             
+                <table class="list" id="moodlist"></table>
+                <div class="pagenumbers mood" id="moodpages"></div>
+                <div id="moodtext" class="itemscount"></div>
+      
+            </div>
+  
+  </div> 
   </div>
-  <div class="math-container mcon2 ">
-    <div id="generalformulatext">
-    <h4>General Formula for Ordering Letters</h4>
-    <div class="formula">
-      $$\frac{N!}{n_A!\cdot n_B! \cdot \ldots n_Z!} $$
+  </div>
+  <div class="row row1">
+  <div class="problemwalkthrough containers text-center contop">
+  
+    <p class="problemintro">
+    Your Turn!
+  </p>
+  
+  <h4 >The General Example</h4>
+  <div class="instruction"><p> We have seen a few examples now so let's investigate the general formula.
+  </p>
+  <p>
+    As we did in the first example, we will always take the factorial of the number of letters in the word. 
+    We can then sort the word into groups of letters. For example, the word Bumblebee contains 2 B's, 1 U, 1 M, 1 L and 3 E's. 
+    We will then divide the original factorial by the product of the factorials of the number of letters in each group.
+    If this is hard to understand, please examine the formula below.
+  </p>
+  <p>
+    In the formula below, N represents the total number of letters in the word. n<sub>A</sub> represents the numbers of
+    A's in the word, n<sub>B</sub> represents the number of B's in the word and so on. Enter in your own word to see how
+    many combinations of letters there are. 
+  </p>
+  <p>
+    The simulator will not accept any phrases with spaces, and will reject non-alphabetical letters. 
+    There is also a limit of 20 letters per word but you will only see a maximum of 100 different combinations.
+  </p>
+  </div>
+  <hr class="hr1">
+  <div class="mcontain2">
+    <div class="math-container math-container1">
+      <h5>Enter in your Word</h5>
+      <input type="text" id="enterword" name="enterword">
+      <button onclick="personalword()" id="enterbutton" type="button" class=" btn gamebuttons ">Combinations!</button>
+      <div class="alert" id="letteralert">
+        <span class="closedbtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        Please only enter words that contain alphabetical letters. You can only enter up to 20 letters.
       </div>
-      <div>N: The number of letters in the word</div>
-      <div>n<sub>A</sub>: The number of A's in the word</div>
-      </div>
-      <div id="enteredformulatext">
-        
-        <span class="closedbtn1 " onclick="this.parentElement.style.color='blue';">&lsaquo;</span> 
-        <h4>Formula for Ordering the Letters of <span id="enteredword1">Now</span></h4>
-        <div class="formula" id="enteredformula">
-          $$\frac{N!}{n_A!\cdot n_B! \cdot \ldots n_Z!} $$
-          </div>
-          
-          </div>
-
     </div>
-
-
-      <div class="math-container math-container1">
-        
-        <h4> All Orderings of "<span id="enteredword">Word</span>"</h4>
-        <table class="list" id="wordlist"></table>
-        <div class="pagenumbers word" id="wordpages"></div>
-        <div id="wordtext" class="itemscount"></div>
+    <div class="math-container mcon2 " id="formulacontainer" value="0">
+      <div id="generalformulatext">
+      <h4>General Formula for Ordering Letters</h4>
+      <div class="formula">
+        $$\frac{N!}{n_A!\cdot n_B! \cdot \ldots n_Z!} $$
+        </div>
+        <div>N: The number of letters in the word</div>
+        <div>n<sub>A</sub>: The number of A's in the word</div>
+        </div>
+        <div id="enteredformulatext">
           
+          <h4>Formula for Ordering the Letters of <span id="enteredword1">Now</span></h4>
+          <div class="formula" id="enteredformula">
+            $$\frac{N!}{n_A!\cdot n_B! \cdot \ldots n_Z!} $$
+            </div>
+            
+            </div>
+  
       </div>
-
-</div> 
-<div id="testtext"></div>
-
-
-
+  
+  
+        <div class="math-container math-container1">
+          
+          <h4> All Orderings of "<span id="enteredword">Word</span>"</h4>
+          <table class="list" id="wordlist"></table>
+          <div class="pagenumbers word" id="wordpages"></div>
+          <div id="wordtext" class="itemscount"></div>
+            
+        </div>
+  
+  </div> 
+  
+  
+  
+  
+      </div>      
     </div>
+    </div>
+ 
     </div>
     </div>
   <script src="../javascript/paginationtables.js"></script>

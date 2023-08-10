@@ -128,3 +128,16 @@
   #enteredformulatext{
 	display: none;
   }
+  .row1{
+	margin: 0px 20px;
+  }
+.mcon2{
+	width: fit-content;
+	margin: 20px auto;
+}
+.problemwalkthrough{
+	width:fit-content;
+}
+.list{
+	margin: 20px auto;
+}

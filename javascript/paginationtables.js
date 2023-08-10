@@ -197,6 +197,7 @@ function personalword(){
 	document.getElementById("enteredformula").innerHTML=formulatextgenerator(myword);
 	document.getElementById("generalformulatext").style.display="none";
 	document.getElementById("enteredformulatext").style.display="block";
+	document.getElementById("formulacontainer").value=1;
 	MathJax.typeset();
 	//Now need to generate the formula text with the new formula
 	
@@ -263,7 +264,13 @@ function factorial(number){
 	}
 	return total
 }
+function formulapages(){}
 
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        personalword();
+    }
+});
 
 
 
